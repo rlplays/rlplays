@@ -1,0 +1,25 @@
+{
+  "FPS": 60,
+  "Files": [
+    {
+      "Filename": "test/simple_jump_test.json",
+      "NumCellTypes": 4,
+      "NumCells": 44,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    }
+  ],
+  "RLTrain": null,
+  "SelectedFile": {
+    "Filename": "test/simple_jump_test.json",
+    "NumCellTypes": 4,
+    "NumCells": 44,
+    "NumSelfPlayTraining": 0,
+    "SupportsRLTraining": true,
+    "SupportsSelfPlay": false,
+    "TrainingMultiplier": 1.0
+  },
+  "WorldFileSetName": "worlds.json"
+}

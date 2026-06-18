@@ -1,0 +1,26 @@
+﻿{
+  "configurations": [
+    {
+      "name": "PufferLibTests_Release",
+      "generator": "Ninja",
+      "configurationType": "Release",
+      "buildRoot": "${projectDir}\\out\\build\\${name}",
+      "installRoot": "${projectDir}\\out\\install\\${name}",
+      "cmakeCommandArgs": "-DRLPLAYS_TRAIN=1 -DRELEASE=1 -DRLPLAYS_TEST=1 -DRLPLAYS_PUFFERLIB_TESTS=1 -DRLPLAYS_WAIT_AFTER_RUN=1 -DPUFFER_CUDA=1 -DCMAKE_CUDA_FLAGS=-allow-unsupported-compiler -DFETCHCONTENT_SOURCE_DIR_RAYLIB=${projectDir}/../../thirdparty/raylib/ ",
+      "buildCommandArgs": "",
+      "ctestCommandArgs": "--  --gtest_break_on_failure --gtest_throw_on_failure  --gtest_catch_exceptions=0",
+      "inheritEnvironments": [ "msvc_x64_x64" ]
+    },
+    {
+      "name": "PufferLibTests",
+      "generator": "Ninja",
+      "configurationType": "Debug",
+      "buildRoot": "${projectDir}\\out\\build\\${name}",
+      "installRoot": "${projectDir}\\out\\install\\${name}",
+      "cmakeCommandArgs": "-DRLPLAYS_TRAIN=1 -DDEBUG=1 -DRLPLAYS_TEST=1 -DRLPLAYS_PUFFERLIB_TESTS=1 -DPUFFERLIB_SELFPLAY=1 -DRLPLAYS_WAIT_AFTER_RUN=1 -DPUFFER_CUDA=1 -DCMAKE_CUDA_FLAGS=-allow-unsupported-compiler -DFETCHCONTENT_SOURCE_DIR_RAYLIB=${projectDir}/../../thirdparty/raylib/ ",
+      "buildCommandArgs": "",
+      "ctestCommandArgs": "--  --gtest_break_on_failure --gtest_throw_on_failure  --gtest_catch_exceptions=0",
+      "inheritEnvironments": [ "msvc_x64_x64" ]
+    }
+  ]
+}

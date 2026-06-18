@@ -1,0 +1,107 @@
+﻿{
+  "configurations": [
+    {
+      "name": "x64-Release",
+      "generator": "Ninja",
+      "configurationType": "Release",
+      "inheritEnvironments": [ "msvc_x64_x64" ],
+      "buildRoot": "${projectDir}\\vsout\\build\\game\\${name}",
+      "installRoot": "${projectDir}\\vsout\\install\\${name}",
+      "cmakeCommandArgs": "-DFETCHCONTENT_SOURCE_DIR_RAYLIB=${projectDir}/../thirdparty/raylib/  ",
+      "ctestCommandArgs": "",
+      "variables": [
+        {
+          "name": "CMAKE_BUILD_TYPE",
+          "value": "Release",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "name": "x64-Debug-Editor",
+      "generator": "Ninja",
+      "configurationType": "Debug",
+      "buildRoot": "${projectDir}\\vsout\\build\\editor\\${name}",
+      "installRoot": "${projectDir}\\vsout\\install\\${name}",
+      "cmakeCommandArgs": "-DDEBUG=1 -DRLPLAYS_EDITOR=1 -DFETCHCONTENT_SOURCE_DIR_RAYLIB=${projectDir}/../thirdparty/raylib/ ",
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "msvc_x64_x64" ]
+    },
+    {
+      "name": "x64-DebugTRACE-Editor",
+      "generator": "Ninja",
+      "configurationType": "Debug",
+      "buildRoot": "${projectDir}\\vsout\\build\\editort\\${name}",
+      "installRoot": "${projectDir}\\vsout\\install\\${name}",
+      "cmakeCommandArgs": "-DDEBUG_TRACE=1 -DDEBUG=1 -DRLPLAYS_EDITOR=1 -DFETCHCONTENT_SOURCE_DIR_RAYLIB=${projectDir}/../thirdparty/raylib/ ",
+      "buildCommandArgs": "-v ",
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "msvc_x64_x64" ]
+    },
+    {
+      "name": "x64-Converter-Dbg",
+      "generator": "Ninja",
+      "configurationType": "Debug",
+      "inheritEnvironments": [ "msvc_x64_x64" ],
+      "buildRoot": "${projectDir}\\vsout\\build\\converterdbg\\${name}",
+      "installRoot": "${projectDir}\\vsout\\install\\${name}",
+      "cmakeCommandArgs": "-DFETCHCONTENT_SOURCE_DIR_RAYLIB=${projectDir}/../thirdparty/raylib/  -DRLPLAYS_CONVERTER=1 -DDEBUG=1 -DRLPLAYS_WAIT_AFTER_RUN=1",
+      "ctestCommandArgs": "",
+      "variables": [
+        {
+          "name": "CMAKE_BUILD_TYPE",
+          "value": "DEBUG",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "name": "x64-Converter-Rel",
+      "generator": "Ninja",
+      "configurationType": "RelWithDebInfo",
+      "buildRoot": "${projectDir}\\vsout\\build\\converterrel\\${name}",
+      "installRoot": "${projectDir}\\vsout\\install\\${name}",
+      "cmakeCommandArgs": "-DFETCHCONTENT_SOURCE_DIR_RAYLIB=${projectDir}/../thirdparty/raylib/  -DRLPLAYS_CONVERTER=1",
+      "buildCommandArgs": "-v ",
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "msvc_x64_x64" ],
+      "variables": [
+        {
+          "name": "CMAKE_BUILD_TYPE",
+          "value": "Release",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "name": "x64-Tests",
+      "generator": "Ninja",
+      "configurationType": "Debug",
+      "buildRoot": "${projectDir}\\vsout\\build\\testsdbg\\${name}",
+      "installRoot": "${projectDir}\\vsout\\install\\${name}",
+      "cmakeCommandArgs": "-DDEBUG=1 -DRLPLAYS_TEST=1 -DRLPLAYS_WAIT_AFTER_RUN=1 -DFETCHCONTENT_SOURCE_DIR_RAYLIB=${projectDir}/../thirdparty/raylib/ ",
+      "ctestCommandArgs": "--  --gtest_break_on_failure --gtest_throw_on_failure  --gtest_catch_exceptions=0",
+      "inheritEnvironments": [ "msvc_x64_x64" ]
+    },
+    {
+      "name": "x64-Tests-Rel",
+      "generator": "Ninja",
+      "configurationType": "RelWithDebInfo",
+      "buildRoot": "${projectDir}\\vsout\\build\\testsrel\\${name}",
+      "installRoot": "${projectDir}\\vsout\\install\\${name}",
+      "cmakeCommandArgs": " -DRLPLAYS_TEST=1 -DRLPLAYS_WAIT_AFTER_RUN=1 -DFETCHCONTENT_SOURCE_DIR_RAYLIB=${projectDir}/../thirdparty/raylib/ ",
+      "ctestCommandArgs": "--  --gtest_break_on_failure --gtest_throw_on_failure  --gtest_catch_exceptions=0",
+      "inheritEnvironments": [ "msvc_x64_x64" ]
+    },
+    {
+      "name": "x64-PufferTests",
+      "generator": "Ninja",
+      "configurationType": "Debug",
+      "buildRoot": "${projectDir}\\vsout\\build\\testsdbg\\${name}",
+      "installRoot": "${projectDir}\\vsout\\install\\${name}",
+      "cmakeCommandArgs": "-DRLPLAYS_TRAIN=1 -DDEBUG=1 -DRLPLAYS_TEST=1 -DRLPLAYS_PUFFERLIB_TESTS=1 -DRLPLAYS_WAIT_AFTER_RUN=1 -DPUFFER_CUDA=1 -DCMAKE_CUDA_FLAGS=-allow-unsupported-compiler -DFETCHCONTENT_SOURCE_DIR_RAYLIB=${projectDir}/../thirdparty/raylib/ ",
+      "ctestCommandArgs": "--  --gtest_break_on_failure --gtest_throw_on_failure  --gtest_catch_exceptions=0",
+      "inheritEnvironments": [ "msvc_x64_x64" ]
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>RLPlays Demo</title>
+
+    <meta name="title" content="RLPlays Demo">
+    <meta name="description" content="A Pixel-Platformer demo to explore self-play and reinforcement learning with raylib/pufferlib">
+    <meta name="keywords" content="raylib, games, html5, programming, C, C++, library, learn, videogames">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Open Graph metatags for sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="RLPlays Demo">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image" content="tile_0000.png">
+    <meta property="og:image:alt" content="A Pixel-Platformer to explore self-play and reinforcement learning with raylib/pufferlib" />
+    <meta property="og:site_name" content="RLPlays Demo">
+    <meta property="og:url" content="https://www.raylib.com/games.html">
+    <meta property="og:description" content="A Pixel-Platformer to explore self-play and reinforcement learning with raylib/pufferlib">
+
+    <!-- Twitter metatags for sharing -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@perumaal_s">
+    <meta name="twitter:title" content="RLPlays Game">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/205263877?v=4">
+    <meta name="twitter:image:alt" content="A Pixel-Platformer to explore self-play and reinforcement learning with raylib/pufferlib">
+    <meta name="twitter:url" content="https://www.raylib.com/games.html">
+    <meta name="twitter:description" content="A Pixel-Platformer to explore self-play and reinforcement learning with raylib/pufferlib">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="tile_0000.png">
+
+    <!-- Web Style -->
+    <style>
+        body { 
+          margin: 0px; 
+          overflow: hidden; 
+          background-color: black;
+        }
+        canvas.emscripten { 
+          border: 0px none; 
+          background-color: black;
+          padding-left: 0;
+          padding-right: 0;
+          margin-left: auto;
+          margin-right: auto;
+          display: block;
+        }
+        #loading-overlay {
+          position: fixed;
+          inset: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(135deg, #0d0d2b 0%, #1a1a4e 40%, #0a2a4a 70%, #0d1b2a 100%);
+          z-index: 9999;
+          transition: opacity 0.6s ease;
+        }
+        #loading-overlay.hidden {
+          opacity: 0;
+          pointer-events: none;
+        }
+        #loading-title {
+          font-family: 'Segoe UI', Arial, sans-serif;
+          font-size: clamp(1.4rem, 4vw, 2.6rem);
+          font-weight: 700;
+          letter-spacing: 0.12em;
+          color: #e8f4fd;
+          text-shadow: 0 0 24px #4fc3f7, 0 0 48px #1565c0;
+          margin-bottom: 0.5em;
+          animation: pulse 2s ease-in-out infinite;
+        }
+        #loading-subtitle {
+          font-family: 'Segoe UI', Arial, sans-serif;
+          font-size: clamp(0.85rem, 2.2vw, 1.2rem);
+          color: #90caf9;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          opacity: 0.85;
+        }
+        #loading-dots::after {
+          content: '';
+          animation: dots 1.5s steps(4, end) infinite;
+        }
+        @keyframes dots {
+          0%   { content: ''; }
+          25%  { content: '.'; }
+          50%  { content: '..'; }
+          75%  { content: '...'; }
+          100% { content: ''; }
+        }
+        @keyframes pulse {
+          0%, 100% { text-shadow: 0 0 24px #4fc3f7, 0 0 48px #1565c0; }
+          50%       { text-shadow: 0 0 40px #81d4fa, 0 0 80px #1e88e5, 0 0 140px #0d47a1; }
+        }
+    </style>
+    <!-- <script type='text/javascript' src="https://cdn.jsdelivr.net/gh/eligrey/FileSaver.js/dist/FileSaver.min.js"> </script> -->
+    <!-- <script type='text/javascript' src="fileserver.js"> </script>
+    <script type='text/javascript'>
+        function saveFileFromMEMFSToDisk(memoryFSname, localFSname)     // This can be called by C/C++ code
+        {
+            var isSafari = false; // Not supported, navigator.userAgent access is being restricted
+            //var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+            var data = FS.readFile(memoryFSname);
+            var blob;
+
+            if (isSafari) blob = new Blob([data.buffer], { type: "application/octet-stream" });
+            else blob = new Blob([data.buffer], { type: "application/octet-binary" });
+
+            // NOTE: SaveAsDialog is a browser setting. For example, in Google Chrome,
+            // in Settings/Advanced/Downloads section you have a setting:
+            // 'Ask where to save each file before downloading' - which you can set true/false.
+            // If you enable this setting it would always ask you and bring the SaveAsDialog
+            saveAs(blob, localFSname);
+        }
+    </script> -->
+    </head>
+    <body>
+
+        <div id="loading-overlay">
+        <div id="loading-title">RLPlays</div>
+        <div id="loading-subtitle">Please wait&hellip; Loading<span id="loading-dots"></span></div>
+      </div>
+      <canvas class=emscripten id=canvas oncontextmenu=event.preventDefault() tabindex=-1></canvas>
+        <p id="output" />
+        <script>
+            var Module = {
+                print: (function() {
+                    var element = document.getElementById('output');
+                    if (element) element.value = ''; // clear browser cache
+                    return function(text) {
+                        if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
+                        console.log(text);
+                        if (element) {
+                          element.value += text + "\n";
+                          element.scrollTop = element.scrollHeight; // focus on bottom
+                        }
+                    };
+                })(),
+                canvas: (function() {
+                    var canvas = document.getElementById('canvas');
+                    return canvas;
+                })(),
+                onRuntimeInitialized: function() {
+                    var overlay = document.getElementById('loading-overlay');
+                    if (overlay) {
+                        overlay.classList.add('hidden');
+                        setTimeout(function() { overlay.remove(); }, 700);
+                    }
+                }
+            };
+        </script>
+        {{{ SCRIPT }}}
+        <!-- Built on: VERSION_STR -->
+    </body>
+</html>

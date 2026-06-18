@@ -1,0 +1,4 @@
+{
+  "3C0BC1DC75C498FEEE2CEFCBA5D754223955BBB0D5322BC310C7F41C2A87916D": "--gtest_filter=*LibTorch*|--gtest_filter=*|",
+  "CurrentProjectSetting": "x64-Debug-Editor"
+}
