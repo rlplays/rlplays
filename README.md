@@ -10,6 +10,9 @@ Here is what the game looks with a fully trained RL agent with a bunch of enemie
 
 ![RLPlays gameplay clip](docs/rl_clip1.gif)
 
+**Basic Structure**
+
+
 
 
 # Setup / Building
@@ -37,5 +40,22 @@ Use VS 2026 (Community) edition, open CMake project and use the target `rlplays_
 
 ## RL tests
 
+
+## Assets
+
+I have included the minimal assets from Kenney.nl - you can download the full assets from [www.kenney.nl](https://www.kenney.nl).
+Please consider donating/buying the full asset pack if you find it useful.
+
+# Thirdparty code
+
+- Raylib - for all the graphics, input and tons of amazing utils.
+- Dear ImGui - for the editor UI, integrated with raylib_imgui
+- Kenney.nl - minimal pixel platformer assets included (CC0)
+- jsoncpp - serialization library
+- emsdk - for the web build
+
+Please check [`THIRDPARTY.md`](THIRDPARTY.md) for the specific licenses.
+
+Although PufferLib is in thirdparty, it's mostly to isolate the github fork as a submodule. It's a core part of the env though.
 
 
