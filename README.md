@@ -27,8 +27,13 @@ Use VS 2026 (Community) edition, open CMake project and use the target `rlplays_
 
 # Editor: Create blocks and edit levels
 
+## Using an LLM to create characters/blocks
 
-## Shortcuts
+I use Opus/Sonnet 4.x as well as GPT 5.x to create the blocks/characters - it's a lot of fun to use an LLM as it's very well suited to this task as well as adding things like confetti or scene transitions etc.
+
+I added [`AGENTS.md`](AGENTS.md) to help with this. It's fairly easy to create these blocks manually but editing the various headers to add a new block has many manual steps - LLMs are way better at it and they produce quick/decent UIs.
+
+## Editor Shortcuts
 
 `CTRL+T`: Open/close editor mode (only on desktop)
 
