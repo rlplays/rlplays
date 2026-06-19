@@ -1,6 +1,5 @@
 #!/bin/bash
 # To run DEBUG build, pass in DEBUG as an argument
-
 CMAKE_ARGS="-DFETCHCONTENT_SOURCE_DIR_RAYLIB=./thirdparty/raylib/  -DCMAKE_EXPORT_COMPILE_COMMANDS=1"
 BUILD_OUT_DIR="build"
 MAIN_DIR="./gameui/"
@@ -10,13 +9,6 @@ do
     CLEAN)
       echo "Cleaning first"
       sh clean-build.sh
-      ;;
-    PULL)
-      echo "Pulling first"
-      git pull
-      cd thirdparty/PufferLib
-      git pull
-      cd ../../
       ;;
     DEBUG_TRACE)
       CMAKE_ARGS="$CMAKE_ARGS -DDEBUG=1 -DDEBUG_TRACE=1"
@@ -58,8 +50,6 @@ do
       #MAIN_DIR="./rlplays/tests/"
       #BUILD_OUT_DIR="build/pufferlib_tests"
       echo "Test (+pufferlib tests) mode enabled"
-      ;;
-    COMMIT_CHANGES)
       ;;
     # Add other flags as needed
     *)

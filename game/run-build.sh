@@ -1,21 +1,12 @@
 #!/bin/bash
 # To run DEBUG build, pass in DEBUG as an argument
-
 EXE_NAME="rlplays_game"
 ADDITIONAL_ARGS=""
-RUN_COMMIT_CHANGES=0
 MORE_ARGS=""
 COMPILE_ARGS=""
 for arg in "$@"
 do
   case $arg in
-    PULL)
-      echo "Pulling first"
-      git pull
-      cd thirdparty/PufferLib
-      git pull
-      cd ../../
-      ;;
     CONVERTER)
       EXE_NAME="rlplays_converter"
       ;;
@@ -29,10 +20,6 @@ do
       ADDITIONAL_ARGS="--gtest_output=xml:build/report.xml"
       MORE_ARGS="$MORE_ARGS PUFFER_TEST"
       echo "Test filter: --gtest_filter='*TestMethod*'"
-      ;;
-    COMMIT_CHANGES)
-      RUN_COMMIT_CHANGES=1
-      echo "Content changes will be committed"
       ;;
      *)
       # Anything not matched above will be forwarded to the final EXE
@@ -60,13 +47,3 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-
-if [ $RUN_COMMIT_CHANGES -ne 0 ]; then
-  echo "Committing content changes"
-  git status
-  git add data/
-  git add gameui/src/resources/
-  git commit -m "Content update"
-  git push origin node
-  echo "Content changes committed"
-fi

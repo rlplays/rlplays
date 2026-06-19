@@ -47,11 +47,11 @@ RUN echo "startxfce4" > /etc/skel/.xsession \
     && adduser xrdp ssl-cert
 
 # Create a non-root user for RDP/SSH login
-# Change 'rdpuser' and 'changeme' to your preferred username and password
-RUN useradd -m -s /bin/bash rdpuser \
-    && echo "rdpuser:changeme" | chpasswd \
-    && echo "startxfce4" > /home/rdpuser/.xsession \
-    && chown rdpuser:rdpuser /home/rdpuser/.xsession
+# Change 'rlplays' and 'c' to your preferred username and password
+RUN useradd -m -s /bin/bash rlplays \
+    && echo "rlplays:c" | chpasswd \
+    && echo "startxfce4" > /home/rlplays/.xsession \
+    && chown rlplays:rlplays /home/rlplays/.xsession
 
 # Configure SSH
 RUN ssh-keygen -A \
@@ -74,11 +74,12 @@ CMD ["sh", "-c", "mkdir -p /var/run/sshd && /usr/sbin/sshd && service xrdp start
 # To run (might need `sudo`):
 # docker run -d -p 3399:3389 -p 2222:22 --name rlplays_rdp rlplays:linux
 # Ensure it runs by checking: docker ps
-# Then RDP to: localhost:3399  (Username: rdpuser  Password: changeme)
-# Then SSH:    ssh rdpuser@localhost -p 2222
+# Then RDP to: localhost:3399  (Username: rlplays  Password: c)
+# Then SSH:    ssh rlplays@localhost -p 2222 (same username / password)
 
 # To rebuild if you change this file:
-# To clean first: docker rm -f rlplays_rdp  && docker rmi rlplays:linux
+# To clean first: docker rm -f rlplays_rdp 
+#  and also: docker rmi rlplays:linux
 # docker build -t rlplays:linux .
-# Then run using the command above.
+# Then run using the `docker run` command above.
 
