@@ -78,8 +78,7 @@ CMD ["sh", "-c", "mkdir -p /var/run/sshd && /usr/sbin/sshd && service xrdp start
 # Then SSH:    ssh rdpuser@localhost -p 2222
 
 # To rebuild if you change this file:
-# Run this if you change the file quite a bit: docker rm -f rlplays_rdp
+# To clean first: docker rm -f rlplays_rdp  && docker rmi rlplays:linux
 # docker build -t rlplays:linux .
-# docker rm -f rlplays_rdp
 # Then run using the command above.
 
