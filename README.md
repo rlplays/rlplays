@@ -70,14 +70,22 @@ On Windows, use `run-build.cmd` similar to `full-build.sh`.
 
 Next:
 
-To launch the game with pretrained RL weights + a sample map:
+### Build/launch the game with pretrained RL weights + a sample map:
 
 ```
 cd game/
 bash full-build.sh DEBUG EDITOR RUN
 ```
 
-You should see a default map.
+You should see a default map open up. Check out the [editor section below](#useful-editor-commands)
+
+
+### Train RL using pufferlib
+
+> Note: I have a [forked version of pufferlib (3.0) with my own native multithreading code](https://github.com/rlplays/PufferLib) in `game/thirdparty/PufferLib/`. I haven't ported to 4.0 yet.
+
+
+# Editor: Create blocks and edit levels
 
 ## Useful editor commands
 
@@ -98,17 +106,11 @@ Important: Make sure to Save World in the Blocks Window to save the file, otherw
 
 ```
 
-# Editor: Create blocks and edit levels
-
 ## Using an LLM to create characters/blocks
 
 I use Opus/Sonnet 4.x as well as GPT 5.x to create the blocks/characters - it's a lot of fun to use an LLM as it's very well suited to this task as well as adding things like confetti or scene transitions etc.
 
 I added [`AGENTS.md`](AGENTS.md) to help with this. It's fairly easy to create these blocks manually but editing the various headers to add a new block has many manual steps - LLMs are way better at it and they produce quick/decent UIs.
-
-## Editor Shortcuts
-
-`CTRL+T`: Open/close editor mode (only on desktop)
 
 
 # Tests
