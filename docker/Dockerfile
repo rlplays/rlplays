@@ -1,8 +1,13 @@
 # Used Copilot/Claude to generate this Dockerfile
-FROM ubuntu:22.04
+FROM nvidia/cuda:12.8.0-devel-ubuntu22.04
 
 # Avoid interactive prompts during installation
 ENV DEBIAN_FRONTEND=noninteractive
+
+# CUDA environment
+ENV CUDA_HOME=/usr/local/cuda
+ENV PATH=${CUDA_HOME}/bin:${PATH}
+ENV LD_LIBRARY_PATH=${CUDA_HOME}/lib64:${LD_LIBRARY_PATH}
 
 # Update apt and install packages
 USER root
@@ -29,8 +34,16 @@ RUN apt-get update && apt-get install -y \
     xterm \
     mousepad \
     openssh-server \
+    python3 \
+    python3-pip \
+    python3-dev \
+    python3-venv \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
+# Make python3 the default python
+RUN ln -sf /usr/bin/python3 /usr/local/bin/python \
+    && pip3 install --upgrade pip
 
 
 # Install CMake 3.27 (or latest stable version)
@@ -72,7 +85,7 @@ CMD ["sh", "-c", "mkdir -p /var/run/sshd && /usr/sbin/sshd && service xrdp start
 # docker build -t rlplays:linux .
 
 # To run (might need `sudo`):
-# docker run -d -p 3399:3389 -p 2222:22 --name rlplays_rdp rlplays:linux
+# docker run -d -p 3399:3389 -p 2222:22 --gpus all --name rlplays_rdp rlplays:linux
 # Ensure it runs by checking: docker ps
 # Then RDP to: localhost:3399  (Username: rlplays  Password: c)
 # Then SSH:    ssh rlplays@localhost -p 2222 (same username / password)
