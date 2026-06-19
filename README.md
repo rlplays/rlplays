@@ -80,19 +80,22 @@ bash full-build.sh DEBUG EDITOR RUN
 You should see a default map open up. Check out the [editor section below](#useful-editor-commands)
 
 
-### Train RL using pufferlib
-
-> Note: I have a [forked version of pufferlib (3.0) with my own native multithreading code](https://github.com/rlplays/PufferLib) in `game/thirdparty/PufferLib/`. I haven't ported to 4.0 yet.
 
 
-# Editor: Create blocks and edit levels
+# Editor/Gameplay mode
+
+> Press CTRL+T to toggle between the editor mode and the gameplay mode.
+
+> Press C to switch between the RL Agent and your Player. (On Round 2 and above, you can play *against* the RL agent!)
 
 ## Useful editor commands
 
-Only works when running with `bash full-build.sh DEBUG EDITOR RUN`
-```
+Start the editor/gameplay program using `bash full-build.sh DEBUG EDITOR RUN`
 
-CTRL+T to open the editor mode, check out the various files, edit the level etc.
+```
+--Shortcuts--
+
+CTRL+T to open/close the editor mode, check out the various files, edit the level etc and go back to playing it.
 
 **Editor Mode**
 Right click to select any block
@@ -100,11 +103,14 @@ Right click to select any block
  - Use the Worlds window to load a map/level/world
  - Use the Blocks to add blocks, save/load world
  - Change the World-level parameters in the World window.
+ 
 SHIFT+Left-click/drag to move blocks
 Change any property and you can preview with CTRL+T
 Important: Make sure to Save World in the Blocks Window to save the file, otherwise, you will lose the changes!
 
 ```
+
+TODO add gifs for editor / llm use
 
 ## Using an LLM to create characters/blocks
 
@@ -113,18 +119,22 @@ I use Opus/Sonnet 4.x as well as GPT 5.x to create the blocks/characters - it's 
 I added [`AGENTS.md`](AGENTS.md) to help with this. It's fairly easy to create these blocks manually but editing the various headers to add a new block has many manual steps - LLMs are way better at it and they produce quick/decent UIs.
 
 
+# RL Training Mode: Train the game using pufferlib
+
+> Note: I have a [forked version of pufferlib (3.0) with my own native multithreading code](https://github.com/rlplays/PufferLib) in `game/thirdparty/PufferLib/`. I haven't ported to 4.0 yet.
+
 # Tests
 
 
-## Game tests
 
-## RL tests
-
+TODO - RL / game tests
 
 ## Assets
 
-I have included the minimal assets from Kenney.nl - you can download the full assets from [www.kenney.nl](https://www.kenney.nl).
+I have included the minimal assets from Kenney.nl as this repo is strictly to understand/train using RL - you can download the full assets from [www.kenney.nl](https://www.kenney.nl).
+
 Please consider donating/buying the full asset pack if you find it useful.
+
 
 # Thirdparty code
 
