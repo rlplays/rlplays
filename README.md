@@ -45,7 +45,10 @@ docker run -d -p 3399:3389 -p 2222:22 --name rlplays_rdp rlplays:linux
 
 #### Option B:
 
-Use [`docker/install_deps.sh`](./docker/install_deps.sh) to install the deps for both Linux and Python manually. Note: You need CUDA 12.8 (not 13) for both nvidia and torch. Check with `nvcc --version`.
+Manually run parts [`docker/install_deps.sh`](./docker/install_deps.sh) to install the deps for both Linux and Python manually. This is automatically installed if you use Docker instead and is safer too!
+
+> Note: Use python venv when using the script above - Docker uses a root user as it's already isolated.
+> Note: You need CUDA 12.8 (not 13) for both nvidia and torch. Check with `nvcc --version`.
 
 
 ## Windows/WSL2/Mac
