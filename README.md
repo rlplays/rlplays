@@ -10,10 +10,6 @@ Here is what the game looks with a fully trained RL agent with a bunch of enemie
 
 ![RLPlays gameplay clip](docs/rl_clip1.gif)
 
-**Basic Structure**
-
-
-
 
 # Setup / Building
 
@@ -28,13 +24,12 @@ cd rlplays
 ```
 
 
-
-## Ubuntu
-
-> I highly discourage using WSL2 due to a variety of issues [that might hopefully be fixed in the future](https://x.com/craigaloewen/status/2061956765646979091). File I/O and importantly CUDA->dxgkrnl latency is too high to train on WSL2. Just use a Docker container *from within an actual Ubuntu kernel* to bypass Windows shenanigans.
-
+> I highly discourage using WSL2 due to a variety of issues [that might hopefully be fixed in the future](https://x.com/craigaloewen/status/2061956765646979091). File I/O and importantly CUDA->dxgkrnl latency is too high to train on WSL2. Just use a Docker container *from within an actual Ubuntu pyhsical machine* to bypass Windows shenanigans.
 
 > NOTE: You need a machine with NVidia+CUDA to train the RL environment.
+
+<details>
+<summary>Setup Docker or local Linux</summary>
 
 #### Option A: Use Docker + dockerfile to build/launch the game
 
@@ -47,22 +42,13 @@ docker run -d -p 3399:3389 -p 2222:22 --name rlplays_rdp rlplays:linux
 # or rdp via localhost:3399 rlplays / c
 ```
 
+
 #### Option B:
 
 
 ```
 # Run with sudo if needed
 apt-get update && apt-get install -y   build-essential g++ git wget libx11-dev  xorg-dev libxrandr-dev   libxinerama-dev libxcursor-dev libxi-dev curl jq libc++1 libc++abi1 
-```
-
-------
-
-Next:
-
-To launch the game with pretrained RL weights + a sample map:
-
-```
-
 ```
 
 
@@ -75,10 +61,42 @@ On non-Linux machines, you can run the game with the trained weights, but it's n
 For Windows: Use VS 2026 (Community) edition, open CMake project and use the target `rlplays_game` to run locally.
 For Mac: The Bash script *should* work fine to launch the game, but haven't tested it much.
 
+On Windows, use `run-build.cmd` similar to `full-build.sh`.
 
-## Web
 
-TODO
+</details>
+
+------
+
+Next:
+
+To launch the game with pretrained RL weights + a sample map:
+
+```
+cd game/
+bash full-build.sh DEBUG EDITOR RUN
+```
+
+You should see a default map.
+
+## Useful editor commands
+
+Only works when running with `bash full-build.sh DEBUG EDITOR RUN`
+```
+
+CTRL+T to open the editor mode, check out the various files, edit the level etc.
+
+**Editor Mode**
+Right click to select any block
+ - Edit the block using the Block window
+ - Use the Worlds window to load a map/level/world
+ - Use the Blocks to add blocks, save/load world
+ - Change the World-level parameters in the World window.
+SHIFT+Left-click/drag to move blocks
+Change any property and you can preview with CTRL+T
+Important: Make sure to Save World in the Blocks Window to save the file, otherwise, you will lose the changes!
+
+```
 
 # Editor: Create blocks and edit levels
 
