@@ -1,0 +1,297 @@
+{
+  "ActionHandlerBlockId": 5,
+  "Blocks": [
+    {
+      "BlockType": 1,
+      "PlayerBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 96.0,
+          "x": 384.0,
+          "y": 768.0
+        },
+        "Depth": 0,
+        "FacingDir": {
+          "x": 1.0,
+          "y": 0.0
+        },
+        "Gravity": {
+          "Velocity": {
+            "x": 0.0,
+            "y": 30.0
+          },
+          "VelocityStrength": {
+            "BckDiffPerFrame": 0.10000000149011612,
+            "FwdDiffPerFrame": 0.10000000149011612,
+            "Max": 1.0,
+            "Min": 0.0,
+            "Val": 0.0
+          }
+        },
+        "Item1": null,
+        "Jump": {
+          "Velocity": {
+            "x": 0.0,
+            "y": -25.0
+          },
+          "VelocityStrength": {
+            "BckDiffPerFrame": 0.10000000149011612,
+            "FwdDiffPerFrame": 0.10000000149011612,
+            "Max": 1.0,
+            "Min": 0.0,
+            "Val": 0.0
+          }
+        },
+        "JumpTimer": {
+          "TimeSet": 209999993
+        },
+        "MaxHearts": 1,
+        "PlayerId": 1,
+        "PlayerSprite": {
+          "Filename": "sprites/player-sheet.png",
+          "SpriteFPS": 4,
+          "SpriteIndex": 0,
+          "SpriteSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "PriorSprite": {
+          "Filename": "",
+          "SpriteFPS": -1,
+          "SpriteIndex": 0,
+          "SpriteSize": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        "Round": 1,
+        "Traits": 2182,
+        "Walk": {
+          "Velocity": {
+            "x": 10.0,
+            "y": 0.0
+          },
+          "VelocityStrength": {
+            "BckDiffPerFrame": 0.10000000149011612,
+            "FwdDiffPerFrame": 0.10000000149011612,
+            "Max": 1.0,
+            "Min": -1.0,
+            "Val": 0.0
+          }
+        }
+      }
+    },
+    {
+      "BlockType": 3,
+      "BrickBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 576.0,
+          "x": 192.0,
+          "y": 1056.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0047.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 3,
+      "BrickBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 96.0,
+          "x": 672.0,
+          "y": 960.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0047.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 3,
+      "BrickBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 480.0,
+          "x": 768.0,
+          "y": 1056.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0047.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 3,
+      "BrickBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 96.0,
+          "x": 384.0,
+          "y": 960.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0047.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 1,
+      "PlayerBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 96.0,
+          "x": 672.0,
+          "y": 768.0
+        },
+        "Depth": 0,
+        "FacingDir": {
+          "x": 1.0,
+          "y": 0.0
+        },
+        "Gravity": {
+          "Velocity": {
+            "x": 0.0,
+            "y": 30.0
+          },
+          "VelocityStrength": {
+            "BckDiffPerFrame": 0.10000000149011612,
+            "FwdDiffPerFrame": 0.10000000149011612,
+            "Max": 1.0,
+            "Min": 0.0,
+            "Val": 0.0
+          }
+        },
+        "Item1": null,
+        "Jump": {
+          "Velocity": {
+            "x": 0.0,
+            "y": -25.0
+          },
+          "VelocityStrength": {
+            "BckDiffPerFrame": 0.10000000149011612,
+            "FwdDiffPerFrame": 0.10000000149011612,
+            "Max": 1.0,
+            "Min": 0.0,
+            "Val": 0.0
+          }
+        },
+        "JumpTimer": {
+          "TimeSet": 209999993
+        },
+        "MaxHearts": 1,
+        "PlayerId": 1,
+        "PlayerSprite": {
+          "Filename": "sprites/player-sheet.png",
+          "SpriteFPS": 4,
+          "SpriteIndex": 0,
+          "SpriteSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "PriorSprite": {
+          "Filename": "",
+          "SpriteFPS": -1,
+          "SpriteIndex": 0,
+          "SpriteSize": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        "Round": 1,
+        "Traits": 2182,
+        "Walk": {
+          "Velocity": {
+            "x": 10.0,
+            "y": 0.0
+          },
+          "VelocityStrength": {
+            "BckDiffPerFrame": 0.10000000149011612,
+            "FwdDiffPerFrame": 0.10000000149011612,
+            "Max": 1.0,
+            "Min": -1.0,
+            "Val": 0.0
+          }
+        }
+      }
+    }
+  ],
+  "ReplayActionHandlerBlockId": 0,
+  "WorldInfo": {
+    "Camera": {
+      "BgColor": {
+        "a": 255,
+        "b": 48,
+        "g": 228,
+        "r": 0
+      },
+      "CellSize": {
+        "x": 96.0,
+        "y": 96.0
+      },
+      "Viewport": {
+        "height": 1728.0,
+        "width": 3072.0,
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "Desc": "",
+    "Desc2": "",
+    "Desc3": "",
+    "Filename": "test/world.json",
+    "GameProgress": {
+      "HasMirrorMode": false,
+      "InfiniteRounds": true,
+      "MaxRounds": 1,
+      "ShowSceneTransitions": false,
+      "TimeLimit": {
+        "TimeSet": 60000000000
+      }
+    },
+    "MainBlockId": -1,
+    "MainBlockId2": -1,
+    "MainBlockId3": -1,
+    "MajorVersion": 0,
+    "MaxRounds": 1,
+    "MinorVersion": 1,
+    "PatchVersion": 0,
+    "Version": 65536,
+    "WorldSize": {
+      "x": 0.0,
+      "y": 0.0
+    }
+  }
+}

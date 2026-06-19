@@ -1,0 +1,1341 @@
+{
+  "ActionHandlerBlockId": 15,
+  "Blocks": [
+    {
+      "BlockType": 3,
+      "BrickBlock": {
+        "Box": {
+          "height": 192.0,
+          "width": 96.0,
+          "x": 1056.0,
+          "y": 1248.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0047.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 3,
+      "BrickBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 96.0,
+          "x": 384.0,
+          "y": 960.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0047.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 4,
+      "MoveableBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 192.0,
+          "x": 864.0,
+          "y": 960.0
+        },
+        "Depth": 0,
+        "MoveVel": {
+          "Velocity": {
+            "x": 5.0,
+            "y": 0.0
+          },
+          "VelocityStrength": {
+            "BckDiffPerFrame": 10000.0,
+            "FwdDiffPerFrame": 10000.0,
+            "Max": 1.0,
+            "Min": -1.0,
+            "Val": 0.0
+          }
+        },
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0100.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 4,
+      "MoveableBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 192.0,
+          "x": 960.0,
+          "y": 864.0
+        },
+        "Depth": 0,
+        "MoveVel": {
+          "Velocity": {
+            "x": 10.0,
+            "y": 0.0
+          },
+          "VelocityStrength": {
+            "BckDiffPerFrame": 10000.0,
+            "FwdDiffPerFrame": 10000.0,
+            "Max": 1.0,
+            "Min": -1.0,
+            "Val": 0.0
+          }
+        },
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0100.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 3,
+      "BrickBlock": {
+        "Box": {
+          "height": 1728.0,
+          "width": 96.0,
+          "x": 0.0,
+          "y": 0.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0047.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 3,
+      "BrickBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 576.0,
+          "x": 864.0,
+          "y": 768.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0047.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 5,
+      "GoalBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 96.0,
+          "x": 1488.0,
+          "y": 480.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0067.png",
+          "TileSize": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        "Traits": 272
+      }
+    },
+    {
+      "BlockType": 6,
+      "ProgressBlock": {
+        "BgColor": {
+          "a": 255,
+          "b": 237,
+          "g": 149,
+          "r": 100
+        },
+        "BgColor2": {
+          "a": 255,
+          "b": 48,
+          "g": 240,
+          "r": 48
+        },
+        "Box": {
+          "height": 96.0,
+          "width": 96.0,
+          "x": 864.0,
+          "y": 96.0
+        },
+        "Depth": 100,
+        "MenuFont": {
+          "FontColor": {
+            "a": 255,
+            "b": 241,
+            "g": 121,
+            "r": 0
+          },
+          "FontFile": "fonts/pixantiqua.ttf",
+          "FontSize": 48,
+          "FontSpacing": 2.0
+        },
+        "ProgressFont": {
+          "FontColor": {
+            "a": 255,
+            "b": 241,
+            "g": 121,
+            "r": 0
+          },
+          "FontFile": "fonts/pixantiqua.ttf",
+          "FontSize": 32,
+          "FontSpacing": 2.0
+        },
+        "Round": 1,
+        "SceneFont": {
+          "FontColor": {
+            "a": 255,
+            "b": 55,
+            "g": 41,
+            "r": 230
+          },
+          "FontFile": "fonts/pixantiqua.ttf",
+          "FontSize": 64,
+          "FontSpacing": 2.0
+        },
+        "TitleFont": {
+          "FontColor": {
+            "a": 255,
+            "b": 126,
+            "g": 31,
+            "r": 112
+          },
+          "FontFile": "fonts/pixantiqua.ttf",
+          "FontSize": 80,
+          "FontSpacing": 2.0
+        },
+        "Traits": 8192
+      }
+    },
+    {
+      "BlockType": 3,
+      "BrickBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 1440.0,
+          "x": 96.0,
+          "y": 0.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0047.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 3,
+      "BrickBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 1440.0,
+          "x": 96.0,
+          "y": 1632.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0047.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 4,
+      "MoveableBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 576.0,
+          "x": 864.0,
+          "y": 1152.0
+        },
+        "Depth": 0,
+        "MoveVel": {
+          "Velocity": {
+            "x": 5.0,
+            "y": 0.0
+          },
+          "VelocityStrength": {
+            "BckDiffPerFrame": 10000.0,
+            "FwdDiffPerFrame": 10000.0,
+            "Max": 1.0,
+            "Min": -1.0,
+            "Val": 0.0
+          }
+        },
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0100.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 3,
+      "BrickBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 864.0,
+          "x": 192.0,
+          "y": 1344.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0047.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 3,
+      "BrickBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 288.0,
+          "x": 96.0,
+          "y": 1536.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0047.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 3,
+      "BrickBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 288.0,
+          "x": 1248.0,
+          "y": 576.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0047.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 7,
+      "SwitchActivatorBlock": {
+        "ActivatorBlock": {
+          "BlockType": 4,
+          "MoveableBlock": {
+            "Box": {
+              "height": 96.0,
+              "width": 288.0,
+              "x": 768.0,
+              "y": 480.0
+            },
+            "Depth": 0,
+            "MoveVel": {
+              "Velocity": {
+                "x": 5.0,
+                "y": 0.0
+              },
+              "VelocityStrength": {
+                "BckDiffPerFrame": 10000.0,
+                "FwdDiffPerFrame": 10000.0,
+                "Max": 1.0,
+                "Min": -1.0,
+                "Val": 0.0
+              }
+            },
+            "Round": 1,
+            "Tex": {
+              "Filename": "sprites/tile_0100.png",
+              "TileSize": {
+                "x": 96,
+                "y": 96
+              }
+            },
+            "Traits": 1
+          }
+        },
+        "ActiveTex": {
+          "Filename": "sprites/tile_0066.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Box": {
+          "height": 96.0,
+          "width": 96.0,
+          "x": 960.0,
+          "y": 1536.0
+        },
+        "Depth": 0,
+        "InactiveTex": {
+          "Filename": "sprites/tile_0064.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Round": 1,
+        "Traits": 8
+      }
+    },
+    {
+      "BlockType": 1,
+      "PlayerBlock": {
+        "Box": {
+          "height": 84.0,
+          "width": 84.0,
+          "x": 864.0,
+          "y": 384.0
+        },
+        "Depth": 0,
+        "FacingDir": {
+          "x": 1.0,
+          "y": 0.0
+        },
+        "Gravity": {
+          "Velocity": {
+            "x": 0.0,
+            "y": 30.0
+          },
+          "VelocityStrength": {
+            "BckDiffPerFrame": 0.10000000149011612,
+            "FwdDiffPerFrame": 0.10000000149011612,
+            "Max": 1.0,
+            "Min": 0.0,
+            "Val": 0.0
+          }
+        },
+        "Item1": {
+          "BlockType": 8,
+          "WeaponBlock": {
+            "Box": {
+              "height": 56.0,
+              "width": 56.0,
+              "x": 12.0,
+              "y": 28.0
+            },
+            "BulletBlock": {
+              "BlockType": 9,
+              "BulletBlock": {
+                "Box": {
+                  "height": 40.0,
+                  "width": 80.0,
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "Damage": 1,
+                "Depth": 0,
+                "MaxTimePerBullet": {
+                  "TimeSet": 5000000000
+                },
+                "MoveBullet": {
+                  "Velocity": {
+                    "x": 20.0,
+                    "y": 0.0
+                  },
+                  "VelocityStrength": {
+                    "BckDiffPerFrame": 1.0,
+                    "FwdDiffPerFrame": 1.0,
+                    "Max": 5.0,
+                    "Min": -5.0,
+                    "Val": 0.0
+                  }
+                },
+                "Offset": {
+                  "x": 0.0,
+                  "y": -40.0
+                },
+                "Round": 1,
+                "Tex": {
+                  "Filename": "sprites/weapons/tile_0044.png",
+                  "TileSize": {
+                    "x": 0,
+                    "y": 0
+                  }
+                },
+                "Traits": 1088
+              }
+            },
+            "Depth": 0,
+            "Offset": {
+              "x": 24.0,
+              "y": 0.0
+            },
+            "Round": 1,
+            "Tex": {
+              "Filename": "sprites/weapons/tile_0050.png",
+              "TileSize": {
+                "x": 0,
+                "y": 0
+              }
+            },
+            "Traits": 544
+          }
+        },
+        "Jump": {
+          "Velocity": {
+            "x": 0.0,
+            "y": -25.0
+          },
+          "VelocityStrength": {
+            "BckDiffPerFrame": 0.10000000149011612,
+            "FwdDiffPerFrame": 0.10000000149011612,
+            "Max": 1.0,
+            "Min": 0.0,
+            "Val": 0.0
+          }
+        },
+        "JumpTimer": {
+          "TimeSet": 209999993
+        },
+        "MaxHearts": 1,
+        "PlayerId": 1,
+        "PlayerSprite": {
+          "Filename": "sprites/player3-sheet.png",
+          "SpriteFPS": 4,
+          "SpriteIndex": 0,
+          "SpriteSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "PriorSprite": {
+          "Filename": "sprites/player-sheet.png",
+          "SpriteFPS": 4,
+          "SpriteIndex": 0,
+          "SpriteSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Round": 1,
+        "Traits": 2182,
+        "Walk": {
+          "Velocity": {
+            "x": 10.0,
+            "y": 0.0
+          },
+          "VelocityStrength": {
+            "BckDiffPerFrame": 0.10000000149011612,
+            "FwdDiffPerFrame": 0.10000000149011612,
+            "Max": 1.0,
+            "Min": -1.0,
+            "Val": 0.0
+          }
+        }
+      }
+    },
+    {
+      "BlockType": 10,
+      "RewardBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 96.0,
+          "x": 576.0,
+          "y": 1248.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/reward1.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 48
+      }
+    },
+    {
+      "BlockType": 10,
+      "RewardBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 96.0,
+          "x": 1344.0,
+          "y": 1056.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/reward1.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 48
+      }
+    },
+    {
+      "BlockType": 11,
+      "MovingEnemyBlock": {
+        "AllowSquash": true,
+        "Box": {
+          "height": 96.0,
+          "width": 96.0,
+          "x": 1056.0,
+          "y": 672.0
+        },
+        "Damage": 1,
+        "Depth": 0,
+        "Health": 1,
+        "MoveVel": {
+          "Velocity": {
+            "x": 2.0,
+            "y": 0.0
+          },
+          "VelocityStrength": {
+            "BckDiffPerFrame": 10000.0,
+            "FwdDiffPerFrame": 10000.0,
+            "Max": 1.0,
+            "Min": -1.0,
+            "Val": 0.0
+          }
+        },
+        "Round": 1,
+        "Sprite": {
+          "Filename": "",
+          "SpriteFPS": -1,
+          "SpriteIndex": 0,
+          "SpriteSize": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        "SquashDamage": 1,
+        "Tex": {
+          "Filename": "sprites/enemies/tile_0013.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 19462
+      }
+    },
+    {
+      "BackgroundBlock": {
+        "Box": {
+          "height": 1728.0,
+          "width": 3072.0,
+          "x": 0.0,
+          "y": 0.0
+        },
+        "Depth": -100,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/bg/pattern_0008.png",
+          "TileSize": {
+            "x": 256,
+            "y": 256
+          }
+        },
+        "Traits": 8192
+      },
+      "BlockType": 12
+    },
+    {
+      "BlockType": 3,
+      "BrickBlock": {
+        "Box": {
+          "height": 192.0,
+          "width": 96.0,
+          "x": 1920.0,
+          "y": 1248.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0047.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 3,
+      "BrickBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 96.0,
+          "x": 2592.0,
+          "y": 960.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0047.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 4,
+      "MoveableBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 192.0,
+          "x": 2016.0,
+          "y": 960.0
+        },
+        "Depth": 0,
+        "MoveVel": {
+          "Velocity": {
+            "x": -5.0,
+            "y": 0.0
+          },
+          "VelocityStrength": {
+            "BckDiffPerFrame": 10000.0,
+            "FwdDiffPerFrame": 10000.0,
+            "Max": 1.0,
+            "Min": -1.0,
+            "Val": 0.0
+          }
+        },
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0100.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 4,
+      "MoveableBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 192.0,
+          "x": 1920.0,
+          "y": 864.0
+        },
+        "Depth": 0,
+        "MoveVel": {
+          "Velocity": {
+            "x": -10.0,
+            "y": 0.0
+          },
+          "VelocityStrength": {
+            "BckDiffPerFrame": 10000.0,
+            "FwdDiffPerFrame": 10000.0,
+            "Max": 1.0,
+            "Min": -1.0,
+            "Val": 0.0
+          }
+        },
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0100.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 3,
+      "BrickBlock": {
+        "Box": {
+          "height": 1728.0,
+          "width": 96.0,
+          "x": 2976.0,
+          "y": 0.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0047.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 3,
+      "BrickBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 576.0,
+          "x": 1632.0,
+          "y": 768.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0047.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 3,
+      "BrickBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 1440.0,
+          "x": 1536.0,
+          "y": 0.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0047.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 3,
+      "BrickBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 1440.0,
+          "x": 1536.0,
+          "y": 1632.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0047.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 4,
+      "MoveableBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 576.0,
+          "x": 1632.0,
+          "y": 1152.0
+        },
+        "Depth": 0,
+        "MoveVel": {
+          "Velocity": {
+            "x": -5.0,
+            "y": 0.0
+          },
+          "VelocityStrength": {
+            "BckDiffPerFrame": 10000.0,
+            "FwdDiffPerFrame": 10000.0,
+            "Max": 1.0,
+            "Min": -1.0,
+            "Val": 0.0
+          }
+        },
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0100.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 3,
+      "BrickBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 864.0,
+          "x": 2016.0,
+          "y": 1344.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0047.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 3,
+      "BrickBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 288.0,
+          "x": 2688.0,
+          "y": 1536.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0047.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 3,
+      "BrickBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 288.0,
+          "x": 1536.0,
+          "y": 576.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/tile_0047.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 1
+      }
+    },
+    {
+      "BlockType": 7,
+      "SwitchActivatorBlock": {
+        "ActivatorBlock": {
+          "BlockType": 4,
+          "MoveableBlock": {
+            "Box": {
+              "height": 96.0,
+              "width": 288.0,
+              "x": 2016.0,
+              "y": 480.0
+            },
+            "Depth": 0,
+            "MoveVel": {
+              "Velocity": {
+                "x": -5.0,
+                "y": 0.0
+              },
+              "VelocityStrength": {
+                "BckDiffPerFrame": 10000.0,
+                "FwdDiffPerFrame": 10000.0,
+                "Max": 1.0,
+                "Min": -1.0,
+                "Val": 0.0
+              }
+            },
+            "Round": 1,
+            "Tex": {
+              "Filename": "sprites/tile_0100.png",
+              "TileSize": {
+                "x": 96,
+                "y": 96
+              }
+            },
+            "Traits": 1
+          }
+        },
+        "ActiveTex": {
+          "Filename": "sprites/tile_0064.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Box": {
+          "height": 96.0,
+          "width": 96.0,
+          "x": 2016.0,
+          "y": 1536.0
+        },
+        "Depth": 0,
+        "InactiveTex": {
+          "Filename": "sprites/tile_0066.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Round": 1,
+        "Traits": 8
+      }
+    },
+    {
+      "BlockType": 1,
+      "PlayerBlock": {
+        "Box": {
+          "height": 84.0,
+          "width": 84.0,
+          "x": 2124.0,
+          "y": 384.0
+        },
+        "Depth": 0,
+        "FacingDir": {
+          "x": -1.0,
+          "y": 0.0
+        },
+        "Gravity": {
+          "Velocity": {
+            "x": 0.0,
+            "y": 30.0
+          },
+          "VelocityStrength": {
+            "BckDiffPerFrame": 0.10000000149011612,
+            "FwdDiffPerFrame": 0.10000000149011612,
+            "Max": 1.0,
+            "Min": 0.0,
+            "Val": 0.0
+          }
+        },
+        "Item1": {
+          "BlockType": 8,
+          "WeaponBlock": {
+            "Box": {
+              "height": 56.0,
+              "width": 56.0,
+              "x": 12.0,
+              "y": 28.0
+            },
+            "BulletBlock": {
+              "BlockType": 9,
+              "BulletBlock": {
+                "Box": {
+                  "height": 40.0,
+                  "width": 80.0,
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "Damage": 1,
+                "Depth": 0,
+                "MaxTimePerBullet": {
+                  "TimeSet": 5000000000
+                },
+                "MoveBullet": {
+                  "Velocity": {
+                    "x": 20.0,
+                    "y": 0.0
+                  },
+                  "VelocityStrength": {
+                    "BckDiffPerFrame": 1.0,
+                    "FwdDiffPerFrame": 1.0,
+                    "Max": 5.0,
+                    "Min": -5.0,
+                    "Val": 0.0
+                  }
+                },
+                "Offset": {
+                  "x": 0.0,
+                  "y": -40.0
+                },
+                "Round": 1,
+                "Tex": {
+                  "Filename": "sprites/weapons/tile_0044.png",
+                  "TileSize": {
+                    "x": 0,
+                    "y": 0
+                  }
+                },
+                "Traits": 1088
+              }
+            },
+            "Depth": 0,
+            "Offset": {
+              "x": 24.0,
+              "y": 0.0
+            },
+            "Round": 1,
+            "Tex": {
+              "Filename": "sprites/weapons/tile_0050.png",
+              "TileSize": {
+                "x": 0,
+                "y": 0
+              }
+            },
+            "Traits": 544
+          }
+        },
+        "Jump": {
+          "Velocity": {
+            "x": 0.0,
+            "y": -25.0
+          },
+          "VelocityStrength": {
+            "BckDiffPerFrame": 0.10000000149011612,
+            "FwdDiffPerFrame": 0.10000000149011612,
+            "Max": 1.0,
+            "Min": 0.0,
+            "Val": 0.0
+          }
+        },
+        "JumpTimer": {
+          "TimeSet": 209999993
+        },
+        "MaxHearts": 1,
+        "PlayerId": 2,
+        "PlayerSprite": {
+          "Filename": "sprites/player3-sheet.png",
+          "SpriteFPS": 4,
+          "SpriteIndex": 0,
+          "SpriteSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "PriorSprite": {
+          "Filename": "sprites/player-sheet.png",
+          "SpriteFPS": 4,
+          "SpriteIndex": 0,
+          "SpriteSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Round": 1,
+        "Traits": 6150,
+        "Walk": {
+          "Velocity": {
+            "x": 10.0,
+            "y": 0.0
+          },
+          "VelocityStrength": {
+            "BckDiffPerFrame": 0.10000000149011612,
+            "FwdDiffPerFrame": 0.10000000149011612,
+            "Max": 1.0,
+            "Min": -1.0,
+            "Val": 0.0
+          }
+        }
+      }
+    },
+    {
+      "BlockType": 10,
+      "RewardBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 96.0,
+          "x": 2400.0,
+          "y": 1248.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/reward1.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 48
+      }
+    },
+    {
+      "BlockType": 10,
+      "RewardBlock": {
+        "Box": {
+          "height": 96.0,
+          "width": 96.0,
+          "x": 1632.0,
+          "y": 1056.0
+        },
+        "Depth": 0,
+        "Round": 1,
+        "Tex": {
+          "Filename": "sprites/reward1.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 48
+      }
+    },
+    {
+      "BlockType": 11,
+      "MovingEnemyBlock": {
+        "AllowSquash": true,
+        "Box": {
+          "height": 96.0,
+          "width": 96.0,
+          "x": 1920.0,
+          "y": 672.0
+        },
+        "Damage": 1,
+        "Depth": 0,
+        "Health": 1,
+        "MoveVel": {
+          "Velocity": {
+            "x": -2.0,
+            "y": 0.0
+          },
+          "VelocityStrength": {
+            "BckDiffPerFrame": 10000.0,
+            "FwdDiffPerFrame": 10000.0,
+            "Max": 1.0,
+            "Min": -1.0,
+            "Val": 0.0
+          }
+        },
+        "Round": 1,
+        "Sprite": {
+          "Filename": "",
+          "SpriteFPS": -1,
+          "SpriteIndex": 0,
+          "SpriteSize": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        "SquashDamage": 1,
+        "Tex": {
+          "Filename": "sprites/enemies/tile_0013.png",
+          "TileSize": {
+            "x": 96,
+            "y": 96
+          }
+        },
+        "Traits": 19462
+      }
+    }
+  ],
+  "ReplayActionHandlerBlockId": 33,
+  "WorldInfo": {
+    "Camera": {
+      "BgColor": {
+        "a": 255,
+        "b": 255,
+        "g": 255,
+        "r": 150
+      },
+      "CellSize": {
+        "x": 96.0,
+        "y": 96.0
+      },
+      "Viewport": {
+        "height": 1728.0,
+        "width": 3072.0,
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "Desc": "",
+    "Desc2": "",
+    "Desc3": "",
+    "Filename": "test/two_player_test.json",
+    "GameProgress": {
+      "HasMirrorMode": true,
+      "InfiniteRounds": true,
+      "MaxRounds": 3,
+      "ShowSceneTransitions": true,
+      "TimeLimit": {
+        "TimeSet": 60000000000
+      }
+    },
+    "MainBlockId": -1,
+    "MainBlockId2": -1,
+    "MainBlockId3": -1,
+    "MajorVersion": 0,
+    "MaxRounds": 3,
+    "MinorVersion": 1,
+    "PatchVersion": 0,
+    "Version": 65536,
+    "WorldSize": {
+      "x": 0.0,
+      "y": 0.0
+    }
+  }
+}
