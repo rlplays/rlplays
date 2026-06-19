@@ -13,6 +13,7 @@ ENV LD_LIBRARY_PATH=${CUDA_HOME}/lib64:${LD_LIBRARY_PATH}
 USER root
 RUN apt-get update && apt-get install -y \
     build-essential \
+    wget curl ca-certificates gnupg lsb-release \
     g++ \
     git \
     wget \
@@ -76,7 +77,8 @@ RUN ssh-keygen -A \
 
 # Clone rlplays repo and install PufferLib
 RUN git clone https://github.com/rlplays/rlplays ~/rlplays \
-    && pip3 install -e ~/rlplays/game/thirdparty/PufferLib/
+    && cd ~/rlplays/docker/ \
+    && bash install_deps.sh
 
 # Expose RDP and SSH ports
 EXPOSE 3389 22
