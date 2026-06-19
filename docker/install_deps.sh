@@ -7,21 +7,11 @@ apt-get update && apt-get install -y --no-install-recommends \
     python3 python3-pip python3-venv python3-dev \
     build-essential git tmux
 
-# --- CUDA (via NVIDIA's apt repo) ---
-# Replace 12-8 and ubuntu2204 with your target versions
-CUDA_VERSION="12-8"
-DISTRO="ubuntu2204"
-ARCH="x86_64"
-
-wget https://developer.download.nvidia.com/compute/cuda/repos/${DISTRO}/${ARCH}/cuda-keyring_1.1-1_all.deb
-dpkg -i cuda-keyring_1.1-1_all.deb
-apt-get update
-apt-get install -y --no-install-recommends \
-    cuda-toolkit-${CUDA_VERSION} \
-    libcudnn9-cuda-12
+# NOTE: CUDA is expected to already be installed (e.g. via the nvidia/cuda Docker base image).
+# If running outside Docker without CUDA, install it manually first:
+#   https://developer.nvidia.com/cuda-downloads
 
 # --- Clean up ---
-rm -f cuda-keyring_1.1-1_all.deb
 apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # --- Python packages ---

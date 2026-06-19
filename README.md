@@ -45,11 +45,7 @@ docker run -d -p 3399:3389 -p 2222:22 --name rlplays_rdp rlplays:linux
 
 #### Option B:
 
-
-```
-# Run with sudo if needed
-apt-get update && apt-get install -y   build-essential g++ git wget libx11-dev  xorg-dev libxrandr-dev   libxinerama-dev libxcursor-dev libxi-dev curl jq libc++1 libc++abi1 
-```
+Use [`docker/install_deps.sh`](./docker/install_deps.sh) to install the deps for both Linux and Python manually. Note: You need CUDA 12.8 (not 13) for both nvidia and torch. Check with `nvcc --version`.
 
 
 ## Windows/WSL2/Mac
