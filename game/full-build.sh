@@ -1,8 +1,12 @@
 #!/bin/bash
-# To run DEBUG build, pass in DEBUG as an argument
+# To run DEBUG build, pass in DEBUG as an argument. Pass RUN to also run the built executable.
 CMAKE_ARGS="-DFETCHCONTENT_SOURCE_DIR_RAYLIB=./thirdparty/raylib/  -DCMAKE_EXPORT_COMPILE_COMMANDS=1"
 BUILD_OUT_DIR="build"
 MAIN_DIR="./gameui/"
+EXE_NAME="rlplays_game"
+ADDITIONAL_ARGS=""
+MORE_ARGS=""
+RUN_EXE=0
 for arg in "$@"
 do
   case $arg in
@@ -28,6 +32,7 @@ do
       ;;
     CONVERTER)
       CMAKE_ARGS="$CMAKE_ARGS -DRLPLAYS_CONVERTER=1"
+      EXE_NAME="rlplays_converter"
       echo "Converter enabled"
       ;;
     RL_TRAIN)
@@ -37,23 +42,29 @@ do
     TEST)
       export ASAN_OPTIONS="halt_on_error=1:abort_on_error=1:detect_leaks=1:print_stacktrace=1:log_path=asan.log"    
       CMAKE_ARGS="$CMAKE_ARGS -DRLPLAYS_TEST=1"
+      EXE_NAME="rlplays_test"
+      ADDITIONAL_ARGS="--gtest_output=xml:build/report.xml"
       echo "Test mode enabled with $CMAKE_ARGS"
       ;;
     PUFFER_CUDA)
       CMAKE_ARGS="$CMAKE_ARGS -DPUFFER_CUDA=1"
       ;;
     PUFFER_TEST)
-      echo "NOT WORKING ON UBUNTU YET!"
       exit 1
       CMAKE_ARGS="$CMAKE_ARGS -DRLPLAYS_TRAIN=1 -DRLPLAYS_TEST=1 -DRLPLAYS_PUFFERLIB_TESTS=1 "
+      EXE_NAME="pufferlib_test"
+      ADDITIONAL_ARGS="--gtest_output=xml:build/report.xml"
       MAIN_DIR="./rlplays/tests"
       #MAIN_DIR="./rlplays/tests/"
       #BUILD_OUT_DIR="build/pufferlib_tests"
       echo "Test (+pufferlib tests) mode enabled"
       ;;
+    RUN)
+      RUN_EXE=1
+      ;;
     # Add other flags as needed
     *)
-      echo "Unknown argument: $arg"
+      MORE_ARGS="$MORE_ARGS $arg"
       ;;
   esac
 done
@@ -73,3 +84,13 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
+if [ $RUN_EXE -eq 1 ]; then
+  echo "..............................."
+  echo "Running ./build/$EXE_NAME/$EXE_NAME $ADDITIONAL_ARGS $MORE_ARGS..."
+  echo "..............................."
+  ./build/$EXE_NAME/$EXE_NAME $ADDITIONAL_ARGS $MORE_ARGS
+  if [ $? -ne 0 ]; then
+    echo "$EXE_NAME failed"
+    exit 1
+  fi
+fi
