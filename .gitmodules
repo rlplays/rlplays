@@ -1,4 +1,0 @@
-[submodule "game/thirdparty/PufferLib"]
-	path = game/thirdparty/PufferLib
-	url = https://github.com/rlplays/PufferLib.git
-	branch = 3.0
