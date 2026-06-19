@@ -35,14 +35,15 @@ do
       
       ;;
     BUILD_MAIN_ONLY)
-      bash rlplays/build_main_program.sh $BUILD_ARGS
+      echo "First building all core rlplays libraries"
+      bash full-build.sh CLEAN RL_TRAIN RELEASE $BUILD_ARGS
       if [ $? -ne 0 ]; then
         echo "Failed to build main program"
         exit 1
       fi
       ;;
     BUILD)
-      bash rlplays/build_main_program.sh $BUILD_ARGS
+      bash full-build.sh CLEAN RL_TRAIN RELEASE $BUILD_ARGS
       if [ $? -ne 0 ]; then
         echo "Failed to build main program"
         exit 1
@@ -94,11 +95,11 @@ do
       ;;
     CONVERTER)
       echo "Converter mode enabled"
-      sh run-build.sh CLEAN RELEASE CONVERTER
+      sh full-build.sh CLEAN RELEASE CONVERTER
       ;;
     TEST)
       echo "Converter + Test+Debug mode enabled"
-      sh run-build.sh CLEAN RELEASE TEST DEBUG
+      sh full-build.sh CLEAN RELEASE TEST DEBUG
       ;;
     RUN)
       echo "Running trained model"
