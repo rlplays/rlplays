@@ -16,4 +16,4 @@ apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # --- Python packages ---
 pip3 install --upgrade pip uv ninja
-uv pip install --index-url https://download.pytorch.org/whl/cu128 torch torchvision torchaudio
+uv pip install --system --index-url https://download.pytorch.org/whl/cu128 torch torchvision torchaudio
