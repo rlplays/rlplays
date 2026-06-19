@@ -23,15 +23,30 @@ To start off:
 
 ```
 git clone https://github.com/rlplays/rlplays
+
+
 ```
-
-> NOTE: You need a machine with NVidia+CUDA to train the RL environment.
-
-
 
 ## Ubuntu
 
 > I highly discourage using WSL2 due to a variety of issues [that might hopefully be fixed in the future](https://x.com/craigaloewen/status/2061956765646979091). File I/O and importantly CUDA->dxgkrnl latency is too high to train on WSL2. Just use a Docker container *from within an actual Ubuntu kernel* to bypass Windows shenanigans.
+
+
+> NOTE: You need a machine with NVidia+CUDA to train the RL environment.
+
+#### Option A: Use Docker + dockerfile to build/launch the game
+
+
+#### Option B:
+
+
+```
+apt-get update && apt-get install -y   build-essential g++ git wget libx11-dev  xorg-dev libxrandr-dev   libxinerama-dev libxcursor-dev libxi-dev curl jq libc++1 libc++abi1 
+```
+
+------
+
+Next:
 
 To launch the game with pretrained RL weights + a sample map:
 
