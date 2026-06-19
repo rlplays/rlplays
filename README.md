@@ -21,11 +21,13 @@ Here is what the game looks with a fully trained RL agent with a bunch of enemie
 
 To start off:
 
+
 ```
 git clone https://github.com/rlplays/rlplays
-
-
+cd rlplays
 ```
+
+
 
 ## Ubuntu
 
@@ -36,11 +38,20 @@ git clone https://github.com/rlplays/rlplays
 
 #### Option A: Use Docker + dockerfile to build/launch the game
 
+```
+cd docker
+docker build -t rlplays:linux .
+docker run -d -p 3399:3389 -p 2222:22 --name rlplays_rdp rlplays:linux
+# Connect via RDP or SSH
+# ssh rlplays@localhost -p 2222 (password c)
+# or rdp via localhost:3399 rlplays / c
+```
 
 #### Option B:
 
 
 ```
+# Run with sudo if needed
 apt-get update && apt-get install -y   build-essential g++ git wget libx11-dev  xorg-dev libxrandr-dev   libxinerama-dev libxcursor-dev libxi-dev curl jq libc++1 libc++abi1 
 ```
 
