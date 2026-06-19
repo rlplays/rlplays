@@ -1,0 +1,605 @@
+{
+  "FPS": 60,
+  "Files": [
+    {
+      "Filename": "archive/pg_blocked2.json",
+      "NumCellTypes": 4,
+      "NumCells": 29,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "archive/pg_blocked3.json",
+      "NumCellTypes": 4,
+      "NumCells": 29,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "archive/pg_blocked4.json",
+      "NumCellTypes": 4,
+      "NumCells": 29,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "archive/pg_blocked5.json",
+      "NumCellTypes": 4,
+      "NumCells": 30,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "archive/pg_blocked6.json",
+      "NumCellTypes": 4,
+      "NumCells": 30,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "levels/mar9_2026.json",
+      "NumCellTypes": 6,
+      "NumCells": 184,
+      "NumSelfPlayTraining": 2500,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": true,
+      "TrainingMultiplier": 150.0
+    },
+    {
+      "Filename": "levels/nov2_2025_enemies.json",
+      "NumCellTypes": 7,
+      "NumCells": 191,
+      "NumSelfPlayTraining": 10,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": true,
+      "TrainingMultiplier": 5.0
+    },
+    {
+      "Filename": "levels/rl_platforms1.json",
+      "NumCellTypes": 5,
+      "NumCells": 193,
+      "NumSelfPlayTraining": 1,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": true,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "levels/rlplays_level1.json",
+      "NumCellTypes": 7,
+      "NumCells": 189,
+      "NumSelfPlayTraining": 1,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": true,
+      "TrainingMultiplier": 2.0
+    },
+    {
+      "Filename": "levels/rlplays_level2.json",
+      "NumCellTypes": 7,
+      "NumCells": 185,
+      "NumSelfPlayTraining": 10,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": true,
+      "TrainingMultiplier": 2.0
+    },
+    {
+      "Filename": "levels/rlplays_level3.json",
+      "NumCellTypes": 6,
+      "NumCells": 181,
+      "NumSelfPlayTraining": 10,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": true,
+      "TrainingMultiplier": 2.0
+    },
+    {
+      "Filename": "levels/rlplays_level4.json",
+      "NumCellTypes": 6,
+      "NumCells": 177,
+      "NumSelfPlayTraining": 15,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": true,
+      "TrainingMultiplier": 9.0
+    },
+    {
+      "Filename": "playground/grid_world.json",
+      "NumCellTypes": 5,
+      "NumCells": 194,
+      "NumSelfPlayTraining": 1,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": true,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "playground/pg_blocked7_multiple.json",
+      "NumCellTypes": 4,
+      "NumCells": 32,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "playground/pg_blocked8_complex.json",
+      "NumCellTypes": 4,
+      "NumCells": 30,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "playground/pg_platforms2.json",
+      "NumCellTypes": 6,
+      "NumCells": 188,
+      "NumSelfPlayTraining": 1,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": true,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "playground/pg_platforms3.json",
+      "NumCellTypes": 5,
+      "NumCells": 179,
+      "NumSelfPlayTraining": 1,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": true,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "templates/enemy1.json",
+      "NumCellTypes": 5,
+      "NumCells": 34,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "templates/hover_enemy.json",
+      "NumCellTypes": 4,
+      "NumCells": 21,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "templates/jump_enemy.json",
+      "NumCellTypes": 4,
+      "NumCells": 53,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "templates/platform_activator.json",
+      "NumCellTypes": 5,
+      "NumCells": 33,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "templates/simple.json",
+      "NumCellTypes": 3,
+      "NumCells": 50,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "templates/some_blocks.json",
+      "NumCellTypes": 4,
+      "NumCells": 59,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/drop_block.json",
+      "NumCellTypes": 6,
+      "NumCells": 33,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/green_level1.json",
+      "NumCellTypes": 7,
+      "NumCells": 44,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/jump_test.json",
+      "NumCellTypes": 5,
+      "NumCells": 49,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/lots_enemies.json",
+      "NumCellTypes": 7,
+      "NumCells": 52,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 10.0
+    },
+    {
+      "Filename": "test/mirror.json",
+      "NumCellTypes": 4,
+      "NumCells": 40,
+      "NumSelfPlayTraining": 5,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": true,
+      "TrainingMultiplier": 4.0
+    },
+    {
+      "Filename": "test/mirror2.json",
+      "NumCellTypes": 4,
+      "NumCells": 40,
+      "NumSelfPlayTraining": 10,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": true,
+      "TrainingMultiplier": 5.0
+    },
+    {
+      "Filename": "test/new_world.json",
+      "NumCellTypes": 5,
+      "NumCells": 35,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/pg_blocked.json",
+      "NumCellTypes": 4,
+      "NumCells": 29,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/pg_enemy1.json",
+      "NumCellTypes": 5,
+      "NumCells": 34,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/pg_enemy2.json",
+      "NumCellTypes": 5,
+      "NumCells": 30,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/pg_goal_reward.json",
+      "NumCellTypes": 4,
+      "NumCells": 16,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/pg_goal_reward2.json",
+      "NumCellTypes": 4,
+      "NumCells": 15,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/pg_move1.json",
+      "NumCellTypes": 5,
+      "NumCells": 40,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/pg_move2.json",
+      "NumCellTypes": 5,
+      "NumCells": 40,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/pg_move3.json",
+      "NumCellTypes": 5,
+      "NumCells": 40,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/pg_move_big.json",
+      "NumCellTypes": 5,
+      "NumCells": 50,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/pg_pos1.json",
+      "NumCellTypes": 4,
+      "NumCells": 30,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/pg_pos2.json",
+      "NumCellTypes": 4,
+      "NumCells": 30,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/pg_pos3.json",
+      "NumCellTypes": 4,
+      "NumCells": 30,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/pg_stairway.json",
+      "NumCellTypes": 4,
+      "NumCells": 39,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/pg_starway_to_heaven.json",
+      "NumCellTypes": 5,
+      "NumCells": 49,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/punch_block.json",
+      "NumCellTypes": 6,
+      "NumCells": 34,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/shooter_block.json",
+      "NumCellTypes": 6,
+      "NumCells": 34,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/simple_blocks.json",
+      "NumCellTypes": 4,
+      "NumCells": 59,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/simple_enemy_blocks.json",
+      "NumCellTypes": 6,
+      "NumCells": 62,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/simple_enemy_blocks2.json",
+      "NumCellTypes": 5,
+      "NumCells": 60,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/simple_enemy_blocks3.json",
+      "NumCellTypes": 4,
+      "NumCells": 56,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/simple_enemy_blocks4.json",
+      "NumCellTypes": 5,
+      "NumCells": 59,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/simple_jump_test.json",
+      "NumCellTypes": 4,
+      "NumCells": 44,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/simple_reward_blocks.json",
+      "NumCellTypes": 5,
+      "NumCells": 70,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/simple_world.json",
+      "NumCellTypes": 5,
+      "NumCells": 35,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/test_level1.json",
+      "NumCellTypes": 5,
+      "NumCells": 201,
+      "NumSelfPlayTraining": 1,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": true,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/two_player_test.json",
+      "NumCellTypes": 7,
+      "NumCells": 173,
+      "NumSelfPlayTraining": 1,
+      "SupportsRLTraining": true,
+      "SupportsSelfPlay": true,
+      "TrainingMultiplier": 1.0
+    },
+    {
+      "Filename": "test/world.json",
+      "NumCellTypes": 0,
+      "NumCells": 0,
+      "NumSelfPlayTraining": 0,
+      "SupportsRLTraining": false,
+      "SupportsSelfPlay": false,
+      "TrainingMultiplier": 1.0
+    }
+  ],
+  "RLTrain": {
+    "CapMaxCells": 210,
+    "CurriculumList": [
+      "test/simple_enemy_blocks.json",
+      "test/simple_reward_blocks.json",
+      "test/simple_blocks.json",
+      "test/simple_enemy_blocks.json",
+      "test/simple_enemy_blocks2.json",
+      "test/simple_enemy_blocks3.json",
+      "test/simple_jump_test.json",
+      "test/simple_reward_blocks.json",
+      "test/simple_enemy_blocks4.json",
+      "levels/mar9_2026.json",
+      "test/simple_enemy_blocks2.json",
+      "test/simple_enemy_blocks3.json",
+      "test/simple_jump_test.json",
+      "test/simple_reward_blocks.json",
+      "test/simple_enemy_blocks4.json",
+      "levels/rlplays_level4.json",
+      "levels/mar9_2026.json",
+      "levels/rlplays_level4.json",
+      "levels/mar9_2026.json",
+      "test/simple_enemy_blocks2.json",
+      "test/simple_enemy_blocks3.json",
+      "test/simple_jump_test.json",
+      "test/simple_reward_blocks.json",
+      "test/simple_enemy_blocks4.json",
+      "levels/rlplays_level4.json",
+      "levels/mar9_2026.json"
+    ],
+    "MaxNumCells": 210,
+    "MaxNumFailureTrainingPerFile": 1000,
+    "MaxNumSecondsToTrain": 45,
+    "MaxNumSuccessfulTrainingPerFile": 100,
+    "PreferredWeight": {
+      "Comment": "Weights from 2026_06_16.",
+      "Config": "models/rlplays_config_2026_06_16.ini",
+      "Filename": "models/rlplays_weights_2026_06_16.bin"
+    },
+    "Weights": [
+      {
+        "Comment": "Latest weights.",
+        "Config": "models/rlplays_config.ini",
+        "Filename": "models/rlplays_weights.bin"
+      },
+      {
+        "Comment": "Mar 16, 2026 - with more self-play training.",
+        "Config": "models/rlplays_config_2026_03_16.ini",
+        "Filename": "models/rlplays_weights_2026_03_16.bin"
+      },
+      {
+        "Comment": "Mar 14, 2026 - pretty good initial model.",
+        "Config": "models/rlplays_config_2026_03_14.ini",
+        "Filename": "models/rlplays_weights_2026_03_14.bin"
+      },
+      {
+        "Comment": "Weights from 2026_03_17.",
+        "Config": "models/rlplays_config_2026_03_17.ini",
+        "Filename": "models/rlplays_weights_2026_03_17.bin"
+      },
+      {
+        "Comment": "Mar 21, 2026, idle time negative reward.",
+        "Config": "models/rlplays_config_2026_03_21.ini",
+        "Filename": "models/rlplays_weights_2026_03_21.bin"
+      },
+      {
+        "Comment": "Weights from 2026_03_24.",
+        "Config": "models/rlplays_config_2026_03_24.ini",
+        "Filename": "models/rlplays_weights_2026_03_24.bin"
+      },
+      {
+        "Comment": "Weights from 2026_06_16.",
+        "Config": "models/rlplays_config_2026_06_16.ini",
+        "Filename": "models/rlplays_weights_2026_06_16.bin"
+      }
+    ]
+  },
+  "SelectedFile": {
+    "Filename": "test/simple_jump_test.json",
+    "NumCellTypes": 4,
+    "NumCells": 44,
+    "NumSelfPlayTraining": 0,
+    "SupportsRLTraining": true,
+    "SupportsSelfPlay": false,
+    "TrainingMultiplier": 1.0
+  },
+  "WorldFileSetName": "worlds.json"
+}
