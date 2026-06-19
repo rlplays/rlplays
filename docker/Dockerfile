@@ -74,6 +74,10 @@ RUN ssh-keygen -A \
     && echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config \
     && echo "UsePAM no" >> /etc/ssh/sshd_config
 
+# Clone rlplays repo and install PufferLib
+RUN git clone https://github.com/rlplays/rlplays ~/rlplays \
+    && pip3 install -e ~/rlplays/game/thirdparty/PufferLib/
+
 # Expose RDP and SSH ports
 EXPOSE 3389 22
 
