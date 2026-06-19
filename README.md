@@ -112,3 +112,12 @@ Please check [`THIRDPARTY.md`](THIRDPARTY.md) for the specific licenses.
 Although PufferLib is in thirdparty, it's mostly to isolate the github fork as a submodule. It's a core part of the env though.
 
 
+
+
+
+### NOTES
+
+Add converter notes
+Editor notes
+RL Training notes
+ - Increase num threads/gpu batches/bptt_horizon etc
