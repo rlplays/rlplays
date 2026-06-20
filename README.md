@@ -1,10 +1,14 @@
-# RLPlays Game Environment - Explore RL using a 2D game
+# RLPlays Game Environment
 
-RLPlays game env allows you to build 2D games - pixel platformers, shooters etc - that you can then train using PufferLib.
+RLPlays game env helps you build 2D games - pixel platformers, shooters etc - that you can then train using [PufferLib](https://puffer.ai).
 
-It supports optional advanced features such as self-play, curriculum learning and so on.
 
-The game is designed around (a) an editor (b) create characters/blocks.
+The game env is designed around:
+ - An editor to create levels/maps
+ - Ability to quickly create new characters/blocks/enemies and edit/preview them in the editor
+ - Pipeline to train using Puffer RL library
+   - Optional advanced features such as self-play, curriculum learning
+ - Deploy the trained playable model on Web/Win/Lin/Mac
 
 Here is what the game looks with a fully trained RL agent with a bunch of enemies/reward/goal/blocks like:
 
