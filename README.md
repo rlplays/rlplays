@@ -189,7 +189,7 @@ I did a dumb version of curriculum training by having a [level ladder](./game/ed
 
 # Tests
 
-Game tests are in [tests](./game/tests/) and RL Tests are in [rlplays/tests](./game/rlplays/tests/). Use `bash full-build.sh TEST` or ``bash full-build.sh PUFFER_TEST` to run the relevant tests. I mainly added `PUFFER_TEST` as that was my primary way to test the [multithreading/GPU batching code I was experimenting with](https://rlplays.com/posts/puffer-opt/).
+Game tests are in [tests](./game/tests/) and RL Tests are in [rlplays/tests](./game/rlplays/tests/). Use `bash full-build.sh TEST` or `bash full-build.sh PUFFER_TEST` to run the relevant tests. I mainly added `PUFFER_TEST` as that was my primary way to test the [multithreading/GPU batching code I was experimenting with](https://rlplays.com/posts/puffer-opt/).
 
 ## Assets
 
