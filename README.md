@@ -107,8 +107,10 @@ Right click to select any block
  - Use the Worlds window to load a map/level/world
  - Use the Blocks to add blocks, save/load world
  - Change the World-level parameters in the World window.
- 
+
+CTRL+Click/drag to resize the block 
 SHIFT+Left-click/drag to move blocks
+CTRL+D to delete a block
 Change any property and you can preview with CTRL+T
 Important: Make sure to Save World in the Blocks Window to save the file, otherwise, you will lose the changes!
 

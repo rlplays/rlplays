@@ -49,8 +49,10 @@ uv pip install --index-url https://download.pytorch.org/whl/cu128 \
     torch torchvision torchaudio
 
 # --- Build-time dependencies that PufferLib's setup.py imports at module load.
-#     These must live in the venv so the editable build can run without isolation. ---
-uv pip install setuptools wheel Cython "numpy<2.0" pybind11 ninja
+#     These must live in the venv so the editable build can run without isolation.
+#     setuptools>=77 is required to parse PufferLib's PEP 639 SPDX license string
+#     (license = "MIT" in pyproject.toml); older setuptools rejects it. ---
+uv pip install "setuptools>=77" wheel Cython "numpy<2.0" pybind11 ninja
 
 # --- Install PufferLib (editable) together with all of its runtime dependencies.
 #     --no-build-isolation makes the build reuse the venv's torch/numpy/pybind11
