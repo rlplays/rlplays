@@ -9,6 +9,9 @@ The game env is designed around:
  - Pipeline to train using Puffer RL library
    - Optional advanced features such as self-play, curriculum learning
  - Deploy the trained playable model on Web/Win/Lin/Mac
+   - You can play against yourself (recorded actions from previous rounds)
+   - You can also play against an RL agent
+   - Or you can simply play as a single-player by yourself
 
 Here is what the game looks with a fully trained RL agent with a bunch of enemies/reward/goal/blocks like:
 
@@ -168,10 +171,21 @@ You should see the training TUI like this:
 
 Once the training is done, it automatically places the trained `.bin` file so you can start playing. You can also watch a 'ghost player' show the highlight reel from the training mode if you use the right file in [ghost_player.h line 137](./game/plays/ghost_player.h). Use CTRL+ 1, CTRL + 2, CTRL + 3 to show the debug ghost player views - you need to open the correct level to see the ghost player.
 
-## Advanced Features
+## Advanced RL Features
 
-*Self-play*
+These are a few features I was toying with - I am not an RL researcher so these are mostly toy research expeditions that I am not fully confident is the right way to do things, but it turned out to be a lot of fun for myself mostly. YMMV.
 
+### Self-play
+
+You can add a second player (with a different player index) into a map and that can play against you (a) via an RL agent (b) or using your recorded actions from a previous round. (You can configure the rounds to try out self-play yourself before training with Puffer).
+
+This self-play by itself (e.g. `rlplays_level4.json`) would show super human characteristics as it learns by battling itself. Adding more enemies, interesting blocks etc would result in some quite interesting behaviors emerge out of simply having the RL algorithm beat itself over a long period of time.
+
+### Curriculum learning
+
+I did a dumb version of curriculum training by having a [level ladder](./game/editor/alldata/worlds/worlds.json#520) that an RL agent would have to climb as it trains on increasingly more difficult levels starting with a few simple blocks/enemies/rewards. You can see `syllabus_index` in the Puffer dashboard TUI (or in WandB) as it hill climbs the various levels. I also tried having simpler levels after training on harder levels to ensure it can master the levels correctly.
+
+> NOTE: The resulting code is research-level crappy code unfortunately as I was experimenting quite a lot with various ways to understand how the RL agent behaves in a realistic playable environment.
 
 # Tests
 
