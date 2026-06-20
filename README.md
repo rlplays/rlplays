@@ -11,7 +11,7 @@ RLPlays game env helps you build 2D games - pixel platformers, shooters etc - th
    - You can also play against an RL agent
    - Or you can simply play as a single-player by yourself
 
-Here is what the game looks with a fully trained RL agent with a bunch of enemies/reward/goal/blocks like:
+Here is what the game looks like - with a fully trained RL agent plus enemies/reward/goal/blocks:
 
 ![RLPlays gameplay clip](docs/rl_clip1.gif)
 
