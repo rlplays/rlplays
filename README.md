@@ -2,8 +2,6 @@
 
 RLPlays game env helps you build 2D games - pixel platformers, shooters etc - that you can then train using [PufferLib](https://puffer.ai).
 
-
-The game env is designed around:
  - An editor to create levels/maps
  - Ability to quickly create new characters/blocks/enemies and edit/preview them in the editor
  - Pipeline to train using Puffer RL library
@@ -132,6 +130,8 @@ Important: Make sure to Save World in the Blocks Window to save the file, otherw
 ![Editor View](./docs/rlplays_editor.gif)
 
 ## Using an LLM to create characters/blocks
+
+> NOTE: Most of the game/RL code is created by hand or with minimal LLM use. Since game design etc were not a core part of this project, I used LLMs heavily to workaround my design/UI weakness.
 
 I use Opus/Sonnet 4.x as well as GPT 5.x to create the blocks/characters - it's a lot of fun to use an LLM as it's very well suited to this task as well as adding things like confetti or scene transitions etc.
 
