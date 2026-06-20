@@ -77,7 +77,7 @@ RUN ssh-keygen -A \
 
 # Clone rlplays repo and install PufferLib
 RUN mkdir /root/rlplays \
-    git clone https://github.com/rlplays/rlplays /root/rlplays \
+    && git clone https://github.com/rlplays/rlplays /root/rlplays \
     && cd /root/rlplays/docker/ \
     && bash install_deps.sh
 
