@@ -214,7 +214,7 @@ Here are the actual thirdparty code in `game/thirdparty/`:
 - json - serialization library - https://github.com/nlohmann/json
 - emsdk - for the web build - https://github.com/emscripten-core/emsdk
 
-Please check [`THIRDPARTY.md`](THIRDPARTY.md) for the specific licenses.
+Please check [`THIRDPARTY.md`](THIRDPARTY.md) for the specific licenses and please donate/support these OSS as they are all awesome projects.
 
 
 
