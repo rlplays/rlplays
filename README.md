@@ -171,6 +171,10 @@ You should see the training TUI like this:
 
 Once the training is done, it automatically places the trained `.bin` file so you can start playing. You can also watch a 'ghost player' show the highlight reel from the training mode if you use the right file in [ghost_player.h line 137](./game/plays/ghost_player.h). Use CTRL+ 1, CTRL + 2, CTRL + 3 to show the debug ghost player views - you need to open the correct level to see the ghost player.
 
+## Converter
+
+If you add new block types/levels, `bash game/full-build.sh CONVERTER` processes all the assets and generates a final RL config as well for RL training. It also places a web-ready/playable version. This also converts old serialized blocks into new ones automatically across all levels/maps.
+
 ## Advanced RL Features
 
 These are a few features I was toying with - I am not an RL researcher so these are mostly toy research expeditions that I am not fully confident is the right way to do things, but it turned out to be a lot of fun for myself mostly. YMMV.
@@ -215,12 +219,3 @@ Please check [`THIRDPARTY.md`](THIRDPARTY.md) for the specific licenses.
 Although PufferLib is in thirdparty, it's mostly to isolate the github fork as a submodule. It's a core part of the env though.
 
 
-
-
-
-### NOTES
-
-Add converter notes
-Editor notes
-RL Training notes
- - Increase num threads/gpu batches/bptt_horizon etc
