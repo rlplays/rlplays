@@ -138,7 +138,7 @@ Example: Given a prompt like:
 
 # RL Training Mode: Train the game using pufferlib
 
-All the [RL code is isolated](./game/rlplays/) so the game can be independently developed. The RL code has environment glue to stitch the RL env via actions/obs/rewards/goal. The main RL env code is in [rl_env.h](./game/rlplays/include/rl_env.h) - it's a bit messy as I was experimenting with curriculum learning, self-play and various forms of obs.
+All the [RL code is isolated](./game/rlplays/) so the game env itself is standalone/playable/tweakable. The RL code has an environment glue code to stitch the RL env via actions/obs/rewards/goal (in [rl_env.h](./game/rlplays/include/rl_env.h) - it's a bit messy as I was experimenting with curriculum learning, self-play and various forms of obs).
 
 > Note: I have a [forked version of pufferlib (3.0) with my own native multithreading code](https://github.com/rlplays/PufferLib) in `game/thirdparty/PufferLib/`. I haven't ported to 4.0 yet.
 
