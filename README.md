@@ -76,6 +76,7 @@ Next:
 ### Build/launch the game with pretrained RL weights + a sample map:
 
 ```
+# In docker, cd /home/rlplays
 cd game/
 bash full-build.sh DEBUG EDITOR RUN
 ```
