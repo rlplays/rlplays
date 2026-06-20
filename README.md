@@ -216,6 +216,5 @@ Here are the actual thirdparty code in `game/thirdparty/`:
 
 Please check [`THIRDPARTY.md`](THIRDPARTY.md) for the specific licenses.
 
-Although PufferLib is in thirdparty, it's mostly to isolate the github fork as a submodule. It's a core part of the env though.
 
 
