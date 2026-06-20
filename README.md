@@ -82,11 +82,17 @@ On Windows, use `run-build.cmd` similar to `full-build.sh`.
 ```
 # In docker, cd /home/rlplays/rlplays
 cd game/
+
+# Get the latest changes in case the docker image is stale:
+git pull
+
+# Build the C++ code and run the GUI env. Requires RDP or some Ubuntu GUI to view the env.
 bash full-build.sh DEBUG EDITOR RUN
 ```
 
-You should see a default map open up. Check out the [editor section below](#useful-editor-commands)
+You should see a default map open up. 
 
+![Game Window](./docs/game_window.png)
 
 
 
@@ -161,6 +167,11 @@ You should see the training TUI like this:
 > TODO: This uses Puffer 3.0; porting to 4.0 requires a resweep (took me several days/almost a week for the 3.0 sweep!) which is the main time consuming step I haven't invested as I don't have a powerful enough GPU to train it.
 
 Once the training is done, it automatically places the trained `.bin` file so you can start playing. You can also watch a 'ghost player' show the highlight reel from the training mode if you use the right file in [ghost_player.h line 137](./game/plays/ghost_player.h). Use CTRL+ 1, CTRL + 2, CTRL + 3 to show the debug ghost player views - you need to open the correct level to see the ghost player.
+
+## Advanced Features
+
+*Self-play*
+
 
 # Tests
 
