@@ -76,8 +76,8 @@ RUN ssh-keygen -A \
     && echo "UsePAM no" >> /etc/ssh/sshd_config
 
 # Clone rlplays repo and install PufferLib
-RUN git clone https://github.com/rlplays/rlplays /home/rlplays \
-    && cd /home/rlplays/docker/ \
+RUN git clone https://github.com/rlplays/rlplays /home/rlplays/rlplays \
+    && cd /home/rlplays/rlplays/docker/ \
     && bash install_deps.sh
 
 # Expose RDP and SSH ports
