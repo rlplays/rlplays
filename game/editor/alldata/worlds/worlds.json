@@ -533,13 +533,8 @@
       "test/mirror2.json",
       "test/jump_test.json",
       "levels/mar9_2026.json",
-      "levels/rlplays_level4.json",
-      "levels/mar9_2026.json",
-      "test/jump_test.json",
-      "levels/mar9_2026.json",
-      "levels/rlplays_level4.json",
-      "levels/mar9_2026.json"
-    ],
+      "levels/rlplays_level4.json"
+     ],
     "MaxNumCells": 210,
     "MaxNumFailureTrainingPerFile": 1000,
     "MaxNumSecondsToTrain": 45,

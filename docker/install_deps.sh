@@ -20,5 +20,4 @@ cd /root/rlplays/game/thirdparty/
 uv venv puffer
 source puffer/bin/activate
 uv pip install --index-url https://download.pytorch.org/whl/cu128 torch torchvision torchaudio
-cd /root/rlplays/game/thirdparty/PufferLib
-TORCH_CUDA_ARCH_LIST="7.0;7.5;8.0;8.6;8.9;9.0" uv pip install -e .
+

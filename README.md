@@ -13,28 +13,32 @@ Here is what the game looks with a fully trained RL agent with a bunch of enemie
 
 # Setup / Building
 
-> TIP: Use a Ubuntu GUI Docker container to setup as Python deps + nvcc/cuda + C++ combo is hard to track; plus isolation helps you avoid messing up your machine / supply-chain attacks.
-
-To start off:
+Use the Ubuntu GUI Docker container to setup as Python deps + nvcc/cuda + C++ combo is hard to track; plus isolation helps you avoid messing up your machine / supply-chain attacks.
 
 
 ```
 git clone https://github.com/rlplays/rlplays
-cd rlplays
+cd rlplays/docker
+docker build -t rlplays:linux .
+docker run -d -p 3399:3389 -p 2222:22 --name rlplays_rdp rlplays:linux
+# Connect via RDP or SSH (Change the password after connecting!)
+# ssh rlplays@localhost -p 2222 (password c)
+# or rdp via localhost:3399 rlplays / c
 ```
 
-
-> I highly discourage using WSL2 due to a variety of issues [that might hopefully be fixed in the future](https://x.com/craigaloewen/status/2061956765646979091). File I/O and importantly CUDA->dxgkrnl latency is too high to train on WSL2. Just use a Docker container *from within an actual Ubuntu pyhsical machine* to bypass Windows shenanigans.
 
 > NOTE: You need a machine with NVidia+CUDA to train the RL environment.
 
 <details>
-<summary>Setup Docker or local Linux</summary>
+<summary>Detailed steps to setup via Docker or via local Linux</summary>
+
+> I highly discourage using WSL2 due to a variety of issues [that might hopefully be fixed in the future](https://x.com/craigaloewen/status/2061956765646979091). File I/O and importantly CUDA->dxgkrnl latency is too high to train on WSL2. Just use a Docker container *from within an actual Ubuntu pyhsical machine* to bypass Windows shenanigans.
+
 
 #### Option A: Use Docker + dockerfile to build/launch the game
 
 ```
-cd docker
+cd rlplays/docker
 docker build -t rlplays:linux .
 docker run -d -p 3399:3389 -p 2222:22 --name rlplays_rdp rlplays:linux
 # Connect via RDP or SSH
@@ -122,11 +126,18 @@ I added [`AGENTS.md`](AGENTS.md) to help with this. It's fairly easy to create t
 
 > Note: I have a [forked version of pufferlib (3.0) with my own native multithreading code](https://github.com/rlplays/PufferLib) in `game/thirdparty/PufferLib/`. I haven't ported to 4.0 yet.
 
+```
+# Inside the docker container or in your local Linux machine with an nvidia 12.8 cuda installation
+cd rlplays/game/thirdparty/
+uv venv puffer
+source puffer/bin/activate
+cd rlplays/game/thirdparty/PufferLib
+TORCH_CUDA_ARCH_LIST="7.0;7.5;8.0;8.6;8.9;9.0" uv pip install -e .
+```
+
 # Tests
 
 
-
-TODO - RL / game tests
 
 ## Assets
 
