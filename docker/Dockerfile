@@ -78,7 +78,8 @@ RUN ssh-keygen -A \
 # Clone rlplays repo and install PufferLib
 RUN git clone https://github.com/rlplays/rlplays /home/rlplays/rlplays \
     && cd /home/rlplays/rlplays/docker/ \
-    && bash install_deps.sh
+    && bash install_deps.sh \
+    && chown -R rlplays:rlplays /home/rlplays/rlplays
 
 # Expose RDP and SSH ports
 EXPOSE 3389 22
