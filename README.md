@@ -126,13 +126,18 @@ I added [`AGENTS.md`](AGENTS.md) to help with this. It's fairly easy to create t
 
 > Note: I have a [forked version of pufferlib (3.0) with my own native multithreading code](https://github.com/rlplays/PufferLib) in `game/thirdparty/PufferLib/`. I haven't ported to 4.0 yet.
 
+
 ```
-# Inside the docker container or in your local Linux machine with an nvidia 12.8 cuda installation
-cd rlplays/game/thirdparty/
-uv venv puffer
-source puffer/bin/activate
-cd rlplays/game/thirdparty/PufferLib
-TORCH_CUDA_ARCH_LIST="7.0;7.5;8.0;8.6;8.9;9.0" uv pip install -e .
+cd rlplays/game
+
+# First time, use INSTALL_DEPS to install Python deps, process all the levels and then train:
+bash rlplays/build_rl_train.sh CLEAN INSTALL_DEPS RELEASE BUILD CONVERTER TRAIN
+
+# To just retrain:
+bash rlplays/build_rl_train.sh RELEASE BUILD CONVERTER TRAIN
+
+# To use WANDB (https://wandb.ai)
+bash rlplays/build_rl_train.sh RELEASE WANDB BUILD CONVERTER TRAIN
 ```
 
 # Tests

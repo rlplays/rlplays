@@ -32,7 +32,12 @@ do
       BUILD_ARGS="local"
       export DEBUG=1
       export NO_ASAN=1
-      
+      ;;
+
+    INSTALL_DEPS)
+      echo "Installing Python dependencies first"
+      cd thirdparty/PufferLib/
+      TORCH_CUDA_ARCH_LIST="7.0;7.5;8.0;8.6;8.9;9.0" uv pip install -e .
       ;;
     BUILD_MAIN_ONLY)
       echo "First building all core rlplays libraries"
