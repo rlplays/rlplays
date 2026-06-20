@@ -16,7 +16,6 @@ echo "****************************************"
 echo "***Current Config: ***"
 cat config/rlplays.ini
 echo "****************************************"
-bash ../../../../sites/send-mail.sh "RL Training Started" "Started RL training at $(date)."
 echo "python -m pufferlib.pufferl train rlplays --train.device cuda $*"
 python -m pufferlib.pufferl train rlplays --train.device cuda $*
 
@@ -25,7 +24,6 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-bash ../../../../sites/send-mail.sh "RL Training Finished" "Finished RL training at $(date)."
 
 cd ../../
 bash ./rlplays/export_weights.sh

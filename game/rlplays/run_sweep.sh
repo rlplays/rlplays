@@ -14,7 +14,6 @@ echo "***Current Config: ***"
 cat config/rlplays.ini
 echo "****************************************"
 
-bash ../../../../sites/send-mail.sh "RL Sweep Started" "Started RL Sweep/training at $(date)."
 echo "python -m pufferlib.pufferl sweep rlplays --train.device cuda $*"
 python -m pufferlib.pufferl sweep rlplays --train.device cuda $*
 
@@ -22,7 +21,6 @@ if [ $? -ne 0 ]; then
   echo "Failed to sweep/train - check logs in experiments/rlplays.log"
   exit 1
 fi
-bash ../../../../sites/send-mail.sh "RL Sweep Finished" "Stopped RL Sweep/training at $(date)."
 
 
 
