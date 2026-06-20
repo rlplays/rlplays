@@ -10,27 +10,27 @@ Here is what the game looks with a fully trained RL agent with a bunch of enemie
 
 ![RLPlays gameplay clip](docs/rl_clip1.gif)
 
+[Check out my blog](https://rlplays.com/) for some of the rationale behind this project and also to play the game live inside the web-browser.
+
 
 # Setup / Building
 
-Use the Ubuntu GUI Docker container to setup as Python deps + nvcc/cuda + C++ combo is hard to track; plus isolation helps you avoid messing up your machine / supply-chain attacks.
-
+Use the prebuilt docker image for a quick start:
 
 ```
-git clone https://github.com/rlplays/rlplays
-cd rlplays/docker
-docker build -t rlplays:linux .
-docker run -d -p 3399:3389 -p 2222:22 --name rlplays_rdp rlplays:linux
+
+docker pull rlplays/rlplays:latest
+docker run -d -p 3399:3389 -p 2222:22 --gpus all --name rlplays_rdp rlplays/rlplays:latest
+
 # Connect via RDP or SSH (Change the password after connecting!)
 # ssh rlplays@localhost -p 2222 (password c)
 # or rdp via localhost:3399 rlplays / c
 ```
 
 
-> NOTE: You need a machine with NVidia+CUDA to train the RL environment.
 
 <details>
-<summary>Detailed steps to setup via Docker or via local Linux</summary>
+<summary><b>Detailed steps to setup via Docker or via local Linux here</b></summary>
 
 > I highly discourage using WSL2 due to a variety of issues [that might hopefully be fixed in the future](https://x.com/craigaloewen/status/2061956765646979091). File I/O and importantly CUDA->dxgkrnl latency is too high to train on WSL2. Just use a Docker container *from within an actual Ubuntu pyhsical machine* to bypass Windows shenanigans.
 
@@ -39,8 +39,8 @@ docker run -d -p 3399:3389 -p 2222:22 --name rlplays_rdp rlplays:linux
 
 ```
 cd rlplays/docker
-docker build -t rlplays:linux .
-docker run -d -p 3399:3389 -p 2222:22 --name rlplays_rdp rlplays:linux
+docker build -t rlplays:latest .
+docker run -d -p 3399:3389 -p 2222:22 --name rlplays_rdp rlplays:latest
 # Connect via RDP or SSH
 # ssh rlplays@localhost -p 2222 (password c)
 # or rdp via localhost:3399 rlplays / c
@@ -49,7 +49,7 @@ docker run -d -p 3399:3389 -p 2222:22 --name rlplays_rdp rlplays:linux
 
 #### Option B:
 
-Manually run parts [`docker/install_deps.sh`](./docker/install_deps.sh) to install the deps for both Linux and Python manually. This is automatically installed if you use Docker instead and is safer too!
+Manually run parts of [`docker/install_deps.sh`](./docker/install_deps.sh) to install the deps for both Linux and Python manually. This is automatically installed if you use Docker instead and is safer too!
 
 > Note: Use python venv when using the script above - Docker uses a root user as it's already isolated.
 > Note: You need CUDA 12.8 (not 13) for both nvidia and torch. Check with `nvcc --version`.
@@ -71,12 +71,12 @@ On Windows, use `run-build.cmd` similar to `full-build.sh`.
 
 ------
 
-Next:
+
 
 ### Build/launch the game with pretrained RL weights + a sample map:
 
 ```
-# In docker, cd /home/rlplays
+# In docker, cd /home/rlplays/rlplays
 cd game/
 bash full-build.sh DEBUG EDITOR RUN
 ```
@@ -116,7 +116,7 @@ Important: Make sure to Save World in the Blocks Window to save the file, otherw
 
 ```
 
-TODO add gifs for editor / llm use
+![Editor View](./docs/rlplays_editor.gif)
 
 ## Using an LLM to create characters/blocks
 
@@ -124,28 +124,43 @@ I use Opus/Sonnet 4.x as well as GPT 5.x to create the blocks/characters - it's 
 
 I added [`AGENTS.md`](AGENTS.md) to help with this. It's fairly easy to create these blocks manually but editing the various headers to add a new block has many manual steps - LLMs are way better at it and they produce quick/decent UIs.
 
+Example: Given a prompt like:
+
+ `Create a jumping enemy block that moves left and right, but when it senses a player within some radius, it moves and jumps towards them and attacks. The player can also jump and kill the enemy.` 
+
+...any recent LLM should be able to use the AGENTS.md to generate the whole set of changes and is instantly RL trainable as well:
+
+![Jumping enemy example](./docs/rlplays_jumping_enemy.gif)
 
 # RL Training Mode: Train the game using pufferlib
+
+All the [RL code is isolated](./game/rlplays/) so the game can be independently developed. The RL code has environment glue to stitch the RL env via actions/obs/rewards/goal. The main RL env code is in [rl_env.h](./game/rlplays/include/rl_env.h) - it's a bit messy as I was experimenting with curriculum learning, self-play and various forms of obs.
 
 > Note: I have a [forked version of pufferlib (3.0) with my own native multithreading code](https://github.com/rlplays/PufferLib) in `game/thirdparty/PufferLib/`. I haven't ported to 4.0 yet.
 
 
+
 ```
-cd rlplays/game
+cd /home/rlplays/rlplays/game
 
-# First time, use INSTALL_DEPS to install Python deps, process all the levels and then train:
-bash rlplays/build_rl_train.sh CLEAN INSTALL_DEPS RELEASE BUILD CONVERTER TRAIN
+# To just retrain (convert all the world files and ensure obs size etc is correctly setup in rlplays.ini):
+bash rlplays/build_rl_train.sh BUILD CONVERTER TRAIN
 
-# To just retrain:
-bash rlplays/build_rl_train.sh RELEASE BUILD CONVERTER TRAIN
-
-# To use WANDB (https://wandb.ai)
-bash rlplays/build_rl_train.sh RELEASE WANDB BUILD CONVERTER TRAIN
+# To use WandB - https://wandb.ai/settings#apikeys and run `wandb login` first
+bash rlplays/build_rl_train.sh  WANDB BUILD CONVERTER TRAIN
 ```
+
+You should see the training TUI like this:
+
+![Puffer Training](./docs/puffer_train.png)
+
+> TODO: This uses Puffer 3.0; porting to 4.0 requires a resweep (took me several days/almost a week for the 3.0 sweep!) which is the main time consuming step I haven't invested as I don't have a powerful enough GPU to train it.
+
+Once the training is done, it automatically places the trained `.bin` file so you can start playing. You can also watch a 'ghost player' show the highlight reel from the training mode if you use the right file in [ghost_player.h line 137](./game/plays/ghost_player.h). Use CTRL+ 1, CTRL + 2, CTRL + 3 to show the debug ghost player views - you need to open the correct level to see the ghost player.
 
 # Tests
 
-
+Game tests are in [tests](./game/tests/) and RL Tests are in [rlplays/tests](./game/rlplays/tests/). Use `bash full-build.sh TEST` or ``bash full-build.sh PUFFER_TEST` to run the relevant tests. I mainly added `PUFFER_TEST` as that was my primary way to test the [multithreading/GPU batching code I was experimenting with](https://rlplays.com/posts/puffer-opt/).
 
 ## Assets
 
