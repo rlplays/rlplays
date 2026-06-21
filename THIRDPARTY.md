@@ -35,7 +35,7 @@ This is the MIT/Expat Licence. For more information see:
 2. http://en.wikipedia.org/wiki/MIT_License
 ```
 
-## Dear ImGui
+## ImGui
 
 ```
 The MIT License (MIT)
