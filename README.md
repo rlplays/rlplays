@@ -66,10 +66,8 @@ Manually run parts of [`docker/install_deps.sh`](./docker/install_deps.sh) to in
 
 On non-Linux machines, you can run the game with the trained weights, but it's not an ideal environment to perform RL training.
 
-For Windows: Use VS 2026 (Community) edition, open CMake project and use the target `rlplays_game` to run locally.
+For Windows: Use VS 2026 (Community) edition, open folder -> `game/` and use the target `rlplays_game` to run locally (it takes a while as it looks at all raylib/imgui/etc targets as well).
 For Mac: The Bash script *should* work fine to launch the game, but haven't tested it much.
-
-On Windows, use `run-build.cmd` similar to `full-build.sh`.
 
 
 </details>
@@ -132,7 +130,7 @@ Important: Make sure to Save World in the Blocks Window to save the file, otherw
 ## Code design/structure
 
 
-The coreloop is written with a headless game env that can be run multithreaded (often running 1000s of copies with different levels across the copies) with 100K+ FPS (or in RL parlance, SPS steps per seconds) across all the environments. All animations/scene transitions etc are optional and run only in GUI (raylib `Draw`) mode. (TODO: add sounds similarly in an optional manner outside of the core ``Update` loop if you were to actually ship a game!).
+The coreloop is written with a headless game env in mind that can run multithreaded (often running 1000s of copies with different levels across the copies) with 100K+ FPS (or in RL parlance, SPS steps per seconds) across all the environments. All animations/scene transitions etc are optional and run only in GUI (raylib `Draw`) mode. (TODO: add sounds similarly in an optional manner outside of the core `Update` loop if you were to actually ship a game!).
 
 To write your own blocks/characters, add them in `game/plays`. Here is a fully self-contained example [for a brick block](./game/plays/game_blocks.h):
 
@@ -141,6 +139,7 @@ struct TBrickBlock : ABlock
 {
   TTexture Tex;
   SerializerWithBase(TBrickBlock, ABlock, Tex)
+
   void Init(TContextPtr context) override { Traits = Solid; }
   void LoadContent(TContextPtr context) override { context->LoadTexture(Tex); }
   void Draw(TContextPtr context) override { context->DrawTexture(Tex, Box, WHITE); }
@@ -184,13 +183,26 @@ I use Opus/Sonnet 4.x as well as GPT 5.x to create the blocks/characters - it's 
 
 I added [`AGENTS.md`](AGENTS.md) to help with this. It's fairly easy to create these blocks manually but editing the various headers to add a new block has many manual steps - LLMs are way better at it and they produce quick/decent UIs.
 
-Example: Given a prompt like:
+I used this prompt below to generate [this `dropper_enemy_block.h`](./game/plays/dropper_enemy_block.h):
 
- `Create a jumping enemy block that moves left and right, but when it senses a player within some radius, it moves and jumps towards them and attacks. The player can also jump and kill the enemy.` 
+```
+• Create a block that drops a block on a player if it detects the player is below them vertically - the dropping block should crush them and after a certain time, it can reset so it can new blocks (should be similar to the bullet/weapon block customizable). Add block templates and wire up everything for both.
+```
 
-...any recent LLM should be able to use the AGENTS.md to generate the whole set of changes and is instantly RL trainable as well:
+...any recent LLM should be able to use the `AGENTS.md` to generate the whole set of changes and is instantly RL trainable as well:
+
+Here is what it looks like (code in [`dropper_enemy_block.h`](./game/plays/dropper_enemy_block.h)):
+
+![Drop Trigger block example](./docs/rlplays_trigger.gif)
+
+[Jumping enemy block](./game/plays/enemy_blocks.h#97):
 
 ![Jumping enemy example](./docs/rlplays_jumping_enemy.gif)
+
+[Hover block:](./game/plays/hover_enemy_block.h)
+
+![Hover enemy block](./docs/rlplays_hover.gif)
+
 
 # RL Training Mode: Train the game using pufferlib
 
