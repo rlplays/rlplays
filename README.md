@@ -123,6 +123,8 @@ CTRL+D to delete a block
 Change any property and you can preview with CTRL+T
 Important: Make sure to Save World in the Blocks Window to save the file, otherwise, you will lose the changes!
 
+DEBUG VIEW: CTRL+1 to show the blocks, move vectors, and grid collisions.
+
 ```
 
 ![Editor View](./docs/rlplays_editor.gif)
