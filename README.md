@@ -134,21 +134,7 @@ Important: Make sure to Save World in the Blocks Window to save the file, otherw
 
 The coreloop is written with a headless game env that can be run multithreaded (often running 1000s of copies with different levels across the copies) with 100K+ FPS (or in RL parlance, SPS steps per seconds) across all the environments. All animations/scene transitions etc are optional and run only in GUI (raylib `Draw`) mode. (TODO: add sounds similarly in an optional manner outside of the core ``Update` loop if you were to actually ship a game!).
 
-
-Under [`game/`](./game/):
- - [`coreloop/`](./game/coreloop/include/) contains core serialization, world/scene, main game, timing/scene transitions, input, context, grid related definitions/code/structures.
-
-
- - [`data/`](./game/data/) contains the current level's data including sprites, fonts etc.
-   - `game/` contains the JSON level(s), while `worlds/` contains the overall list of levels.
-   - `models/` contains the final trained RL config+weights
- - [`editor/`](./game/editor/) contains the ImGui-based editor invoked using `CTRL+T`.
-   - `alldata/` here contains the entire set of resources you might have (in the public GitHub repo, I have included some CC0-licensed assets from kenney.nl, but this is where you would have all your assets in one place that will then be converted/copied to `data/` using the [converter](#converter)).
- - [`gameui/`](./game/gameui) - ignore this, contains the overall CMake files, some raylib-level integration.
- - [**`plays/`**](./game/plays) - contains the core block definitions. 
-   - Create new block types, characters, enemies here and use the resources in [`alldata/](./game/editor/alldata/).
-   - Really simple but fully functional example:
-
+To write your own blocks/characters, add them in `game/plays`. Here is a fully self-contained example [for a brick block](./game/plays/game_blocks.h):
 
 ```cpp
 struct TBrickBlock : ABlock
@@ -160,8 +146,26 @@ struct TBrickBlock : ABlock
   void Draw(TContextPtr context) override { context->DrawTexture(Tex, Box, WHITE); }
 };
 ```
-   - This loads up in the editor and you can position this block anywhere, load any texture and is available as an RL obs and is RL trainable automatically with no specialization needed.
-   - I found it useful to [to use an LLM](#using-an-llm-to-create-charactersblocks) to create characters and blocks here.
+
+This shows up in the editor and you can position this block anywhere, load any texture and is available as an RL obs and is RL trainable automatically with no specialization needed.
+
+> You do need to add the enum/type for serialization: two-line change in [`tblock.h`](./game/plays/tblock.h).
+
+ > I found it useful to [to use an LLM](#using-an-llm-to-create-charactersblocks) to create characters and blocks, as [`AGENTS.md`](./AGENTS.md) already has this recipe ready including creating [a block template for you](./game/plays/block_templates.h) to add via the editor easily.
+
+
+Here is the overall structure in [`game/`](./game/):
+ - [`coreloop/`](./game/coreloop/include/) contains core serialization, world/scene, main game, timing/scene transitions, input, context, grid related definitions/code/structures.
+
+
+ - [`data/`](./game/data/) contains the current level's data including sprites, fonts etc.
+   - `game/` contains the JSON level(s), while `worlds/` contains the overall list of levels.
+   - `models/` contains the final trained RL config+weights
+ - [`editor/`](./game/editor/) contains the ImGui-based editor invoked using `CTRL+T`.
+   - `alldata/` here contains the entire set of resources you might have (in the public GitHub repo, I have included some CC0-licensed assets from kenney.nl, but this is where you would have all your assets in one place that will then be converted/copied to `data/` using the [converter](#converter)).
+ - [`gameui/`](./game/gameui) - ignore this, contains the overall CMake files, some raylib-level integration.
+ - [**`plays/`**](./game/plays) - contains the core block definitions. 
+   - Create new block types, characters, enemies here and use the resources in [`alldata/](./game/editor/alldata/).
  - [**`rlplays/`**](./game/rlplays) - contains the core RL glue:
    - `include/rl_env.h` - contains the actual RL environment including converting to the obs and running the `coreloop`.
    - `tests/` - contains the RL tests that I use to test the multi-threading and other CUDA-related stuff.
