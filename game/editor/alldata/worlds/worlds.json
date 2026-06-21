@@ -534,15 +534,15 @@
       "test/jump_test.json",
       "levels/mar9_2026.json",
       "levels/rlplays_level4.json"
-     ],
+    ],
     "MaxNumCells": 210,
     "MaxNumFailureTrainingPerFile": 1000,
     "MaxNumSecondsToTrain": 45,
     "MaxNumSuccessfulTrainingPerFile": 100,
     "PreferredWeight": {
-      "Comment": "Weights from 2026_06_16.",
-      "Config": "models/rlplays_config_2026_06_16.ini",
-      "Filename": "models/rlplays_weights_2026_06_16.bin"
+      "Comment": "Weights from 2026_06_20.",
+      "Config": "models/rlplays_config_2026_06_20.ini",
+      "Filename": "models/rlplays_weights_2026_06_20.bin"
     },
     "Weights": [
       {
@@ -579,6 +579,11 @@
         "Comment": "Weights from 2026_06_16.",
         "Config": "models/rlplays_config_2026_06_16.ini",
         "Filename": "models/rlplays_weights_2026_06_16.bin"
+      },
+      {
+        "Comment": "Weights from 2026_06_20.",
+        "Config": "models/rlplays_config_2026_06_20.ini",
+        "Filename": "models/rlplays_weights_2026_06_20.bin"
       }
     ]
   },
