@@ -17,6 +17,7 @@ Here is what the game looks like - with a fully trained RL agent plus enemies/re
 
 [Check out my blog](https://rlplays.com/) for some of the rationale behind this project and also to play the game live inside the web-browser.
 
+> **NOTE: I am no longer working on this project - feel free to fork/use as you see fit. If you do find this useful, please donate to [OSS](#thirdparty-code) / cite this project / [send me a note](https://x.com/perumaal_s).**
 
 # Setup / Building
 
