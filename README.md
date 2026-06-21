@@ -129,10 +129,16 @@ Important: Make sure to Save World in the Blocks Window to save the file, otherw
 
 ![Editor View](./docs/rlplays_editor.gif)
 
-## Code structure
+## Code design/structure
+
+
+The coreloop is written with a headless game env that can be run multithreaded (often running 1000s of copies with different levels across the copies) with 100K+ FPS (or in RL parlance, SPS steps per seconds) across all the environments. All animations/scene transitions etc are optional and run only in GUI (raylib `Draw`) mode. (TODO: add sounds similarly in an optional manner outside of the core ``Update` loop if you were to actually ship a game!).
+
 
 Under [`game/`](./game/):
  - [`coreloop/`](./game/coreloop/include/) contains core serialization, world/scene, main game, timing/scene transitions, input, context, grid related definitions/code/structures.
+
+
  - [`data/`](./game/data/) contains the current level's data including sprites, fonts etc.
    - `game/` contains the JSON level(s), while `worlds/` contains the overall list of levels.
    - `models/` contains the final trained RL config+weights
@@ -141,6 +147,20 @@ Under [`game/`](./game/):
  - [`gameui/`](./game/gameui) - ignore this, contains the overall CMake files, some raylib-level integration.
  - [**`plays/`**](./game/plays) - contains the core block definitions. 
    - Create new block types, characters, enemies here and use the resources in [`alldata/](./game/editor/alldata/).
+   - Really simple but fully functional example:
+
+
+```cpp
+struct TBrickBlock : ABlock
+{
+  TTexture Tex;
+  SerializerWithBase(TBrickBlock, ABlock, Tex)
+  void Init(TContextPtr context) override { Traits = Solid; }
+  void LoadContent(TContextPtr context) override { context->LoadTexture(Tex); }
+  void Draw(TContextPtr context) override { context->DrawTexture(Tex, Box, WHITE); }
+};
+```
+   - This loads up in the editor and you can position this block anywhere, load any texture and is available as an RL obs and is RL trainable automatically with no specialization needed.
    - I found it useful to [to use an LLM](#using-an-llm-to-create-charactersblocks) to create characters and blocks here.
  - [**`rlplays/`**](./game/rlplays) - contains the core RL glue:
    - `include/rl_env.h` - contains the actual RL environment including converting to the obs and running the `coreloop`.
@@ -212,7 +232,14 @@ This self-play by itself (e.g. `rlplays_level4.json`) would show super human cha
 
 I did a dumb version of curriculum training by having a [level ladder](./game/editor/alldata/worlds/worlds.json#520) that an RL agent would have to climb as it trains on increasingly more difficult levels starting with a few simple blocks/enemies/rewards. You can see `syllabus_index` in the Puffer dashboard TUI (or in WandB) as it hill climbs the various levels. I also tried having simpler levels after training on harder levels to ensure it can master the levels correctly.
 
+Here is how the curriculum learning looks like in WandB:
+
+![Curriculum learning](./docs/curriculum_training.png)
+
+As you can see, the tougher levels take a longer time to train and you can clearly see the agent hillclimb the difficulty ladder over hundreds of millions of steps (~1.5-2 hours on a 2080 RTX Ti card).
+
 > NOTE: The resulting code is research-level crappy code unfortunately as I was experimenting quite a lot with various ways to understand how the RL agent behaves in a realistic playable environment.
+
 
 # Tests
 
