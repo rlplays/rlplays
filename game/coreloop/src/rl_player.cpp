@@ -99,11 +99,6 @@ struct TRLState
 
       ::FillEnv(&env_, context, activePlayer_);
       const auto done = ::FillRewards(&env_, context, activePlayer_);
-      if (done)
-      {
-        enabled_ = false;
-        return;
-      }
       ::forward_linearlstm(net_, env_.observations, env_.actions);
     }
     StepEnv_(context);
