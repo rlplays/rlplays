@@ -30,7 +30,7 @@ struct TRLState
     env_ = RLPlaysEnv{
         .num_obs = modelConfig.GetInt("", "env.num_obs", 0),
         .num_actions = modelConfig.GetInt("", "env.num_actions", 0),
-        .max_steps = 1000000,
+        .max_steps = 1000000, // TODO: Must use the same logic as during training.
         .num_frame_skips = modelConfig.GetInt("", "env.num_frame_skips", 1),
         .render_supported = 0,
     };
