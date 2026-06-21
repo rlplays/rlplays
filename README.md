@@ -129,6 +129,29 @@ Important: Make sure to Save World in the Blocks Window to save the file, otherw
 
 ![Editor View](./docs/rlplays_editor.gif)
 
+## Code structure
+
+Under [`game/`](./game/):
+ - [`coreloop/`](./game/coreloop/include/) contains core serialization, world/scene, main game, timing/scene transitions, input, context, grid related definitions/code/structures.
+ - [`data/`](./game/data/) contains the current level's data including sprites, fonts etc.
+   - `game/` contains the JSON level(s), while `worlds/` contains the overall list of levels.
+   - `models/` contains the final trained RL config+weights
+ - [`editor/`](./game/editor/) contains the ImGui-based editor invoked using `CTRL+T`.
+   - `alldata/` here contains the entire set of resources you might have (in the public GitHub repo, I have included some CC0-licensed assets from kenney.nl, but this is where you would have all your assets in one place that will then be converted/copied to `data/` using the [converter](#converter)).
+ - [`gameui/`](./game/gameui) - ignore this, contains the overall CMake files, some raylib-level integration.
+ - [**`plays/`**](./game/plays) - contains the core block definitions. 
+   - Create new block types, characters, enemies here and use the resources in [`alldata/](./game/editor/alldata/).
+   - I found it useful to [to use an LLM](#using-an-llm-to-create-charactersblocks) to create characters and blocks here.
+ - [**`rlplays/`**](./game/rlplays) - contains the core RL glue:
+   - `include/rl_env.h` - contains the actual RL environment including converting to the obs and running the `coreloop`.
+   - `tests/` - contains the RL tests that I use to test the multi-threading and other CUDA-related stuff.
+   - Also contains various scripts used to link with the [`thirdparty/PufferLib/`](./game/thirdparty/PufferLib/) codebase including copying the RL config into pufferlib, training the RL weights and copying the RL weights back.
+   - `rlplays.h` and `rlplays.py` link with the Puffer 3.0 (not 4.0) code. 
+   > NOTE: `rlplays.py` should go away when integrated with 4.0, but the `rlplays.h` should work mostly the same with the 4.0 codebase.
+ - [`tests/`](./game/tests/) - contains `GoogleTest` (gtest) based tests. Tests out the core grid/actions as well as the play/utils code.
+   - Installed automatically when using CMake.
+   - To run, see [below](#tests).
+
 ## Using an LLM to create characters/blocks
 
 > NOTE: Most of the game/RL code is created by hand or with minimal LLM use. Since game design etc were not a core part of this project, I used LLMs heavily to workaround my design/UI weakness.
